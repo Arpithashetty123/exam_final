@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'apps/features/authentications/mainscreen.dart';
+import 'apps/features/view/account_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,21 +19,8 @@ debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: Colors.deepPurple,
           ),
-      home: HomePage(),
+      home: MainInfoPage(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('My First App'),
-        centerTitle: true,
-      ),
-body:Container()
-);
-}
-}
