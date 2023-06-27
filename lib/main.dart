@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'apps/features/authentications/mainscreen.dart';
 import 'apps/features/view/account_page.dart';
+import 'apps/features/view/custom_navigation.dart';
+import 'apps/features/view/number_page.dart';
+import 'apps/features/view/set_gender.dart';
+import 'apps/features/view/settings_page.dart';
+import 'apps/features/view/spalsh_screen.dart';
+import 'apps/features/view/verification_page.dart';
+import 'apps/features/view/welcome_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +26,8 @@ debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: Colors.deepPurple,
           ),
-      home: MainInfoPage(),
+      home:SetGenderPage() 
+
     );
   }
 }

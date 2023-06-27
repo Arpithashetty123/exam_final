@@ -48,8 +48,11 @@ class _LoginPageState extends State<LoginPage> {
             TextFieldWidget(),
             SizedBox(height:25),
             LoginButton(
-                containerColour: Color.fromRGBO(33, 39, 56, 1),
-                newWidget: Center(
+              borderRadius: 3,
+              height: 70,
+              width: 400,
+                containerColor: Color.fromRGBO(33, 39, 56, 1),
+                childWidget: Center(
                   child: Text("Log In", style: loginColour()),
                 )),
             SizedBox(

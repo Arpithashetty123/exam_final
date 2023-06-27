@@ -1,13 +1,20 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 TextStyle toddddler() {
-  return TextStyle(
+  return GoogleFonts.poppins(
                 color:Color.fromRGBO(33, 39, 56, 1),
-                fontWeight: FontWeight.bold,
-                fontSize: 50);
+              ///  fontWeight: FontWeight.,
+                fontSize: 45);
+}
+TextStyle toddddler1() {
+  return GoogleFonts.poppins(
+                color:Color.fromRGBO(170, 221, 233, 1),
+              ///  fontWeight: FontWeight.,
+                fontSize: 45);
 }
 
 TextStyle loginColour() {
@@ -15,4 +22,16 @@ TextStyle loginColour() {
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize:35);
+}
+TextStyle verificationColour() {
+  return GoogleFonts.poppins(
+                color:Color.fromRGBO(33, 39, 56, 1),
+                fontWeight: FontWeight.bold,
+                fontSize:32);
+}
+TextStyle verificationsubColour() {
+  return GoogleFonts.poppins(
+                color:Color.fromRGBO(184, 182, 182, 1),
+                fontWeight: FontWeight.w400,
+                fontSize:15,letterSpacing: 1);
 }

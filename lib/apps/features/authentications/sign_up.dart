@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/apps/features/utils/container_widget.dart';
+import 'package:flutter_application_1/apps/features/view/account_page.dart';
+import 'package:flutter_application_1/apps/features/view/verification_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 import '../utils/pagestyle.dart';
 import '../utils/textfield_widgets.dart';
+import '../view/custom_navigation.dart';
 import 'login_page.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -79,9 +82,18 @@ class _SignUpPageState extends State<SignUpPage> {
                                 BorderSide(width: 3, color: Colors.black)))),
               ),
               SizedBox(height: 30,),
-              LoginButton(containerColour:  Color.fromRGBO(102,211,246, 1),newWidget:  Center(
-                  child: Text("Sign Up", style: loginColour()),
-                )),
+              GestureDetector(
+                onTap: () {
+                   Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) =>  CustomNavigationBar()),
+                        );
+                },
+                child: LoginButton(containerColor:  Color.fromRGBO(102,211,246, 1),borderRadius: 3,height: 70,width: 400,
+                childWidget:  Center(
+                    child: Text("Sign Up", style: loginColour()),
+                  )),
+              ),
                 SizedBox(height: 30,),
                  Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -108,6 +120,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ],
                 ),
+                
             ],
           ),
         ),

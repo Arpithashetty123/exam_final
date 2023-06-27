@@ -54,7 +54,7 @@ class mainScreenPage extends StatelessWidget {
            SizedBox(
                     height: 50,
                   ),
-                 LoginButton(containerColour: Color.fromRGBO(102, 211, 246, 1), newWidget:   Row(
+                 LoginButton(borderRadius: 3,  height: 70,width: 400, containerColor: Color.fromRGBO(102, 211, 246, 1), childWidget:   Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Dont't have an account?", style: TextStyle( fontSize: 20,letterSpacing: 1),),
