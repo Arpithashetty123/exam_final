@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/apps/features/authentications/sign_up.dart';
-import 'package:flutter_application_1/apps/features/utils/container_widget.dart';
 import 'package:flutter_application_1/apps/features/utils/pagestyle.dart';
-
 import 'package:google_fonts/google_fonts.dart';
-
-import '../utils/textfield_widgets.dart';
+import '../utils/Button_widgets/container_widget.dart';
+import '../utils/Button_widgets/textfield_widgets.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -18,45 +16,37 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Align(
-        alignment: Alignment.topCenter,
-        child: SingleChildScrollView(
-          child: Column(children: [
+      body: SingleChildScrollView(
+        child: Padding(
+            padding: EdgeInsets.only(left: 25,right: 25),
+          child: Column(
+            children: [
             const SizedBox(
               height: 150,
             ),
-            Container(
-              height: 100,
-              width: 100,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(
-                        "assets/images/child-4.png",
-                      ),
-                      fit: BoxFit.contain)),
-            ),
+           Image.asset("assets/images/child-4.png",scale: 0.8,),
             const SizedBox(
-              height: 10,
+              height: 12,
             ),
             Text(
               "toddddler",
               style: toddddler(),
             ),
             SizedBox(
-              height: 140,
+              height: 120,
             ),
             TextFieldWidget(),
-            SizedBox(height:25),
+            SizedBox(height: 50),
             LoginButton(
-              borderRadius: 3,
-              height: 70,
-              width: 400,
+                borderRadius: 10,
+                height: 70,
+                width: 400,
                 containerColor: Color.fromRGBO(33, 39, 56, 1),
                 childWidget: Center(
                   child: Text("Log In", style: loginColour()),
                 )),
             SizedBox(
-              height: 25,
+              height: 40,
             ),
             InkWell(
                 onTap: () {
@@ -69,9 +59,9 @@ class _LoginPageState extends State<LoginPage> {
                 child: Text(
                   "Or Sign Up",
                   style: GoogleFonts.poppins(
-                    decoration: TextDecoration.underline,
-                      color: const Color.fromARGB(255, 26, 179, 249),
-                      fontSize: 20),
+                      decoration: TextDecoration.underline,
+                      color: Color.fromRGBO(102, 211, 246, 1),
+                      fontSize: 18),
                 ))
           ]),
         ),
