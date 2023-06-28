@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/apps/features/utils/container_widget.dart';
+import 'package:flutter_application_1/apps/features/utils/Button_widgets/container_widget.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -76,7 +76,7 @@ class _SetGenderPageState extends State<SetGenderPage> {
       
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(30),
-        borderSide: BorderSide(color: Colors.black, width: 5),
+        borderSide: const BorderSide(color: Color.fromARGB(255, 18, 16, 16), width: 5),
       ),
       hintText: "Enter Your Gender",
       hintStyle: TextStyle(color: Colors.grey.shade400),

@@ -12,16 +12,16 @@ TextStyle toddddler() {
 }
 TextStyle toddddler1() {
   return GoogleFonts.poppins(
-                color:Color.fromRGBO(170, 221, 233, 1),
+                color:Color.fromRGBO(102, 215, 246, 1),
               ///  fontWeight: FontWeight.,
                 fontSize: 45);
 }
 
 TextStyle loginColour() {
-  return TextStyle(
+  return GoogleFonts.poppins(
                 color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize:35);
+                fontWeight: FontWeight.w400,
+                fontSize:25);
 }
 TextStyle verificationColour() {
   return GoogleFonts.poppins(

@@ -1,12 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import '../authentications/login_page.dart';
-import '../utils/pagestyle.dart';
+import '../authentications/mainscreen.dart';
+import '../utils/splash_screen_widgets/Container_widget.dart';
+import '../utils/splash_screen_widgets/image_widget.dart';
+import '../utils/splash_screen_widgets/text_widget.dart';
 class SplashPage extends StatefulWidget {
-  const SplashPage({Key? key});
-
+  const SplashPage({super.key, });
   @override
   State<SplashPage> createState() => _SplashPageState();
 }
@@ -20,10 +18,10 @@ class _SplashPageState extends State<SplashPage> {
 
   Future<void> _navigateToNextScreen() async {
    
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 5));
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
-        builder: (BuildContext context) => LoginPage(),
+        builder: (BuildContext context) => const MainScreenPage(),
       ),
     );
   }
@@ -35,49 +33,19 @@ class _SplashPageState extends State<SplashPage> {
         children: [
           Align(
             alignment: Alignment.center,
-            child: Container(
-              height: 800,
-              width: 800,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Color.fromARGB(255, 225, 246, 255),
-              ),
-            ),
+            child:SplashContainer(800,800)
           ),
           Positioned(
             top: 150,
             left: 300,
-            height: 300,
-            width: 300,
-            child: Container(
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Color.fromARGB(255, 225, 246, 255),
-              ),
-            ),
+            child: SplashContainer(300, 300)
           ),
           Positioned(
             bottom: 0,
             right: 220,
-            height: 400,
-            width: 380,
-            child: Container(
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Color.fromARGB(255, 225, 246, 255),
-              ),
-            ),
+           child: SplashContainer(400, 380),
           ),
-          Positioned(
-            top: 350,
-            left: 160,
-            child: Image.asset("assets/images/child-7.png"),
-          ),
-          Positioned(
-            top: 352,
-            left: 164,
-            child: Image.asset("assets/images/child-4.png"),
-          ),
+         const SplashImage(),
           const Positioned(
             top: 180,
             right: 60,
@@ -87,7 +55,7 @@ class _SplashPageState extends State<SplashPage> {
                   "assets/images/smiling-baby-biting-right-index-finger-1648374.png"),
             ),
           ),
-          Positioned(
+          const Positioned(
             bottom: 100,
             right: 190,
             child: CircleAvatar(
@@ -97,7 +65,7 @@ class _SplashPageState extends State<SplashPage> {
                   AssetImage("assets/images/child-christmas-baby-cute-37664.png"),
             ),
           ),
-          Positioned(
+          const Positioned(
             top: 220,
             left: 70,
             child: CircleAvatar(
@@ -106,16 +74,7 @@ class _SplashPageState extends State<SplashPage> {
               backgroundImage: AssetImage("assets/images/baby-in-white-onesie-789786.png"),
             ),
           ),
-          Positioned(
-            bottom: 393,
-            left: 100,
-            child: Text("toddddler", style: toddddler1()),
-          ),
-          Positioned(
-            bottom: 400,
-            left: 100,
-            child: Text("toddddler", style: toddddler()),
-          ),
+         const SplashTextWidget(),
         ],
       ),
     );

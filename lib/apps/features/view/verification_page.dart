@@ -4,7 +4,8 @@ import 'package:flutter_application_1/apps/features/view/welcome_page.dart';
 
 import 'package:flutter_verification_code/flutter_verification_code.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../utils/container_widget.dart';
+import '../utils/Button_widgets/container_widget.dart';
+
 import '../utils/pagestyle.dart';
 
 class VerificationPage extends StatefulWidget {
