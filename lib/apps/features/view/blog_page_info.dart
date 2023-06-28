@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../utils/Blog_info_widget.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
 class BlogDetailsPage extends StatelessWidget {
    BlogDetailsPage({super.key});

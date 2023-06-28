@@ -20,16 +20,7 @@ class _MainInfoPageState extends State<MainInfoPage> {
           const SizedBox(
             height: 120,
           ),
-          Container(
-            height: 120,
-            width: 120,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/child-4.png"),
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),
+         Image.asset("assets/images/child-4.png",scale: 0.8,),
           SizedBox(
             height: 15,
           ),

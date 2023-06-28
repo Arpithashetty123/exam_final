@@ -39,7 +39,7 @@ class CustomContainer extends StatelessWidget {
               fontSize: 20,
             ),
           ),
-        ],
+        ]
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CategoriesPage extends StatelessWidget {
    CategoriesPage({super.key});
@@ -15,10 +16,10 @@ class CategoriesPage extends StatelessWidget {
   ];
 
   final List<Color> containerColors = [
-    Colors.red,
-    Colors.blue,
-    Colors.green,
-    Colors.orange,
+    Color.fromRGBO(255, 217, 218, 1),
+  Color.fromRGBO(222, 245, 252,1),
+   Color.fromRGBO(228, 252, 222 ,1),
+   Color.fromRGBO(233, 217, 255 ,1),
    
   ];
   @override
@@ -27,7 +28,7 @@ class CategoriesPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 60, 
+              height: 65, 
               child: ListView.builder(
                 
                 shrinkWrap: true,
@@ -37,7 +38,7 @@ class CategoriesPage extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      width: 120,
+                      width: 125,
                       decoration: BoxDecoration(
                         color: containerColors[index % containerColors.length],
                         borderRadius: BorderRadius.circular(30),
@@ -45,10 +46,10 @@ class CategoriesPage extends StatelessWidget {
                       child: Center(
                         child: Text(
                           categories[index],
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                          style:  GoogleFonts.poppins(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ),

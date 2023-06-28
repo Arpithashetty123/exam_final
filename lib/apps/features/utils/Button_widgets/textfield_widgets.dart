@@ -4,7 +4,21 @@ import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextFieldWidget extends StatelessWidget {
-  const TextFieldWidget({Key? key});
+   TextFieldWidget({Key? key});
+
+  final OutlineInputBorder focusedInputBorder = OutlineInputBorder(
+    borderSide: BorderSide(color: Colors.blue, width: 3),
+    borderRadius: BorderRadius.circular(10),
+  );
+
+  final InputDecoration commonInputDecoration = InputDecoration(
+    prefixIconColor: Colors.black,
+    hintStyle: GoogleFonts.poppins(color: Colors.grey.shade400),
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(5),
+      borderSide: BorderSide(color: Colors.black, width: 3),
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -13,19 +27,10 @@ class TextFieldWidget extends StatelessWidget {
         SizedBox(
           width: 400,
           child: TextField(
-            decoration: InputDecoration(
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.blue, width: 3),
-                borderRadius: BorderRadius.circular(10),
-              ),
+            decoration: commonInputDecoration.copyWith(
+              focusedBorder: focusedInputBorder,
               prefixIcon: Icon(Ionicons.ios_at),
-              prefixIconColor: Colors.black,
               hintText: "UserName/Email",
-              hintStyle: GoogleFonts.poppins(color: Colors.grey.shade400),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(5),
-                borderSide: BorderSide(color: Colors.black, width: 3),
-              ),
             ),
           ),
         ),
@@ -36,16 +41,13 @@ class TextFieldWidget extends StatelessWidget {
           width: 400,
           child: TextField(
             obscureText: true,
-            decoration: InputDecoration(
-              focusedBorder: OutlineInputBorder(
+            decoration: commonInputDecoration.copyWith(
+              focusedBorder: focusedInputBorder.copyWith(
                 borderSide: BorderSide(color: Colors.blue.shade400, width: 3),
-                borderRadius: BorderRadius.circular(5),
               ),
               hintText: "Enter Your Password",
-              hintStyle: GoogleFonts.poppins(color: Colors.grey.shade400),
-              prefixIcon: Icon(Icons.lock),
-              prefixIconColor: Colors.black,
-              suffixIcon: Icon(Icons.visibility),
+              prefixIcon: Icon(Fontisto.asterisk, size: 20),
+              suffixIcon: Icon(Icons.visibility, size: 30),
               suffixIconColor: Colors.black,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),

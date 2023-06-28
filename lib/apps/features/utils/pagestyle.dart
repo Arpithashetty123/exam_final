@@ -23,6 +23,12 @@ TextStyle loginColour() {
                 fontWeight: FontWeight.w400,
                 fontSize:25);
 }
+TextStyle loginColour2() {
+  return GoogleFonts.poppins(
+                color: Colors.black,
+                fontWeight: FontWeight.w300,
+                fontSize:22);
+}
 TextStyle verificationColour() {
   return GoogleFonts.poppins(
                 color:Color.fromRGBO(33, 39, 56, 1),
