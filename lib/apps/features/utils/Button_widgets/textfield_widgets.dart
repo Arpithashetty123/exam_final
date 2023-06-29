@@ -12,6 +12,9 @@ class TextFieldWidget extends StatelessWidget {
   );
 
   final InputDecoration commonInputDecoration = InputDecoration(
+     enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(width: 3,color: Colors.black)
+                  ),
     prefixIconColor: Colors.black,
     hintStyle: GoogleFonts.poppins(color: Colors.grey.shade400),
     border: OutlineInputBorder(
@@ -42,6 +45,7 @@ class TextFieldWidget extends StatelessWidget {
           child: TextField(
             obscureText: true,
             decoration: commonInputDecoration.copyWith(
+              
               focusedBorder: focusedInputBorder.copyWith(
                 borderSide: BorderSide(color: Colors.blue.shade400, width: 3),
               ),

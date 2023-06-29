@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 
-import 'account_page.dart';
+import 'accountPages/account_page.dart';
 
 
 class CustomNavigationBar extends StatelessWidget {

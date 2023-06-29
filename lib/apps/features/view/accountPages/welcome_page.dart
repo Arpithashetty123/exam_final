@@ -4,10 +4,10 @@ import 'package:flutter_application_1/apps/features/utils/login_with_phone/close
 
 import 'package:flutter_application_1/apps/features/view/profile_page.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
-import '../utils/Button_widgets/container_widget.dart';
-import '../utils/Button_widgets/phone_widget.dart';
-import '../utils/login_with_phone/glad_to_have_widget.dart';
-import '../utils/pagestyle.dart';
+import '../../utils/Button_widgets/container_widget.dart';
+import '../../utils/Button_widgets/phone_widget.dart';
+import '../../utils/login_with_phone/glad_to_have_widget.dart';
+import '../../utils/pagestyle.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -42,21 +42,21 @@ class _WelcomePageState extends State<WelcomePage> {
                           "But before we continue, we will\nneed to know a little bit about you too.",
                           style: verificationsubColour(),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         ),
                         phoneNumberWidget(BorderRadius.circular(30)),
                         SizedBox(
                           height: 30,
                         ),
-                        CustomInputContainer(
+                        const CustomInputContainer(
                           hintText: "Your Email",
                           sufixIcon: Icons.email,
                         ),
                         SizedBox(
                           height: 30,
                         ),
-                        CustomInputContainer(
+                        const CustomInputContainer(
                           hintText: "Password",
                           sufixIcon: Icons.remove_red_eye_outlined,
                         ),

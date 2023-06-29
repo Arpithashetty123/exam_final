@@ -2,11 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/apps/features/view/post_page.dart';
+import 'package:flutter_application_1/apps/features/view/recordingPages/post_page.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../utils/recordings/container_widget.dart';
+import '../../utils/recordings/container_widget.dart';
 
 class BlurPage extends StatefulWidget {
   const BlurPage({Key? key}) : super(key: key);

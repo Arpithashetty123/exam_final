@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/apps/features/view/cam_access_page.dart';
+import 'package:flutter_application_1/apps/features/view/recordingPages/cam_access_page.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 
-import '../../view/account_page.dart';
+import '../../view/accountPages/account_page.dart';
 
 class BottomNavBar extends StatefulWidget {
   @override

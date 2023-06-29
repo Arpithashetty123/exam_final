@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../utils/Button_widgets/button_widget.dart';
-import '../utils/pagestyle.dart';
+import '../../utils/Button_widgets/Custom_container.dart';
+import '../../utils/pagestyle.dart';
 import 'number_page.dart';
 class MainInfoPage extends StatefulWidget {
   const MainInfoPage({super.key});

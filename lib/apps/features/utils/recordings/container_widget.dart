@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/apps/features/view/post_page.dart';
+import 'package:flutter_application_1/apps/features/view/recordingPages/post_page.dart';
 
 import 'circle_avatr_widget.dart';
 

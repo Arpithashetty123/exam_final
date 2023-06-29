@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_application_1/apps/features/view/verification_page.dart';
+import 'package:flutter_application_1/apps/features/view/accountPages/verification_page.dart';
 
-import '../utils/Button_widgets/button_widget.dart';
-import '../utils/Button_widgets/container_widget.dart';
-import '../utils/Button_widgets/phone_widget.dart';
-import '../utils/login_with_phone/back_arrow.dart';
-import '../utils/pagestyle.dart';
+import '../../utils/Button_widgets/Custom_container.dart';
+import '../../utils/Button_widgets/container_widget.dart';
+import '../../utils/Button_widgets/phone_widget.dart';
+import '../../utils/login_with_phone/back_arrow.dart';
+import '../../utils/pagestyle.dart';
 
 class MyNumberPage extends StatefulWidget {
   const MyNumberPage({super.key});

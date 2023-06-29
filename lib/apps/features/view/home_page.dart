@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../utils/home_page_widget/bottom_navigation.dart';
 import '../utils/home_page_widget/categories.dart';
 import '../utils/home_page_widget/story_widget.dart';
-import 'blog_page_info.dart';
+import 'recordingPages/blog_page_info.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

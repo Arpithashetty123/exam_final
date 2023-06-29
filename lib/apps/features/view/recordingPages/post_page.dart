@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../utils/icon_widget.dart';
-import '../utils/recordings/circle_avatr_widget.dart';
-import '../utils/recordings/post_container.dart';
+import '../../utils/icon_widget.dart';
+import '../../utils/recordings/circle_avatr_widget.dart';
+import '../../utils/recordings/post_container.dart';
 
 
 class PostPage extends StatelessWidget {
