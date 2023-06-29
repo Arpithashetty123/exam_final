@@ -13,9 +13,9 @@ class CustomInputContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 15,),
+      padding: const EdgeInsets.only(left: 0,),
       child: Container(
-        width: 350,
+        width: 400,
         height: 65,
         decoration: BoxDecoration(
           color: Colors.transparent,
@@ -49,7 +49,7 @@ class CustomInputContainer extends StatelessWidget {
             ),
              Icon(
               sufixIcon,
-              color: Colors.grey.shade400,
+              color: Colors.grey.shade600,
             ),
           ],
         ),

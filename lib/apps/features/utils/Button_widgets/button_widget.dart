@@ -18,20 +18,33 @@ class CustomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 80,
+      width: 350,
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(35),
+        boxShadow: [
+          BoxShadow(
+
+        color: Colors.grey.withOpacity(0.2),
+        blurRadius: 4,
+        offset: Offset(0, 3),
+        spreadRadius: 2,
+      
+          )
+        ]
       ),
       padding: EdgeInsets.all(10),
       child: Row(
       
         children: [
+          SizedBox(width: 5),
           Icon(
             icon,
             size: 40,
             color:iconColor
           ),
-          SizedBox(width: 10),
+          SizedBox(width: 12),
           Text(
             text,
             style: GoogleFonts.poppins(

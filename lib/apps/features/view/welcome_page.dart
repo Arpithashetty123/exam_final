@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/apps/features/utils/login_with_phone/close_widget.dart';
 
 import 'package:flutter_application_1/apps/features/view/profile_page.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import '../utils/Button_widgets/container_widget.dart';
-import '../utils/glad_to_have_widget.dart';
+import '../utils/Button_widgets/phone_widget.dart';
+import '../utils/login_with_phone/glad_to_have_widget.dart';
 import '../utils/pagestyle.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -20,41 +22,30 @@ class _WelcomePageState extends State<WelcomePage> {
     return Scaffold(
         body: SafeArea(
             child: Padding(
-                padding: const EdgeInsets.only(left: 25, top: 50),
+                         padding: const EdgeInsets.only(left: 30, top: 50,right: 25),
                 child: SingleChildScrollView(
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                              color: Colors.transparent,
-                              borderRadius: BorderRadius.circular(14),
-                              border: Border.all(
-                                  color: Color.fromRGBO(102, 211, 246, 1))),
-                          child: IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                AntDesign.close,
-                                color: Color.fromRGBO(102, 211, 246, 1),
-                                size: 35,
-                              )),
-                        ),
+                       CloseIconWidget(),
                         SizedBox(
-                          height: 30,
+                          height: 50,
                         ),
                         Text(
                           "Glad to have you.",
                           style: verificationColour(),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
                         Text(
                           "But before we continue, we will\nneed to know a little bit about you too.",
                           style: verificationsubColour(),
                         ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        phoneNumberWidget(BorderRadius.circular(30)),
                         SizedBox(
                           height: 30,
                         ),
@@ -77,7 +68,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           sufixIcon: Icons.person,
                         ),
                         const SizedBox(
-                          height: 30,
+                          height: 50,
                         ),
                         GestureDetector(
                         onTap: () {
@@ -85,7 +76,7 @@ class _WelcomePageState extends State<WelcomePage> {
       return ProfilePage();}));
                         },
                           child: const LoginButton(
-                              width: 350,
+                              width: 380,
                                height: 65,
                               borderRadius: 30,
                               containerColor: Color.fromRGBO(102, 211, 246, 1),

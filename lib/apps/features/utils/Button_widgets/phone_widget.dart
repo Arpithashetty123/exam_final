@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
-Widget phoneNumberWidget() {
+Widget phoneNumberWidget(BorderRadius BorderRadius) {
   return  IntlPhoneField(
                 showDropdownIcon: false,
                 showCountryFlag: false,
                 disableLengthCheck: true,
+                cursorColor: Colors.grey,
                 decoration: InputDecoration(
+                  
                     border: OutlineInputBorder(
-                       borderRadius: BorderRadius.circular(10)
+                       borderRadius: BorderRadius
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide:  BorderSide(color: Colors.blue, width: 3),
-                      borderRadius: BorderRadius.circular(10))
+                      borderRadius:BorderRadius)
                 ),
                 initialCountryCode: 'IN',
               

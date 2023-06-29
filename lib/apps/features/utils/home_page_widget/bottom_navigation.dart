@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/apps/features/view/cam_access_page.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 
 import '../../view/account_page.dart';
@@ -40,6 +41,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 color: Colors.white,
               ),
               onPressed: () {
+                Navigator.push(context,MaterialPageRoute(builder: (context) {
+                  return CameAccessPage();
+                },));
                 onTabTapped(2);
               },
             ),

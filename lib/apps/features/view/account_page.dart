@@ -2,128 +2,148 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../utils/button_widget.dart';
+import '../utils/Button_widgets/button_widget.dart';
 import '../utils/pagestyle.dart';
 import 'number_page.dart';
-
 class MainInfoPage extends StatefulWidget {
+  const MainInfoPage({super.key});
+
   @override
   _MainInfoPageState createState() => _MainInfoPageState();
 }
 
 class _MainInfoPageState extends State<MainInfoPage> {
+    int currentIndex = 0;
+   void onTabTapped(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 120,
-          ),
-         Image.asset("assets/images/child-4.png",scale: 0.8,),
-          SizedBox(
-            height: 15,
-          ),
-          Text(
-            "Sign Up/Login for",
-            style: GoogleFonts.poppins(
-              fontSize: 20,
-              color: const Color.fromRGBO(102, 211, 246, 1),
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: [
+            const SizedBox(
+              height: 65,
             ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Text(
-            "toddddler",
-            style: toddddler(),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => MyNumberPage(),
-                ),
-              );
-            },
-            child: CustomContainer(
-              iconColor: Colors.white,
-              textColor: Colors.white,
-              backgroundColor: Color.fromRGBO(102, 211, 246, 1),
-              icon: FontAwesome.mobile_phone,
-              text: "Phone Number",
+           Image.asset("assets/images/child-4.png",scale: 0.8,),
+            const SizedBox(
+              height: 35,
             ),
-          ),
-          const SizedBox(height: 15),
-          CustomContainer(
-            iconColor: Colors.black,
-            textColor: Colors.black,
-            backgroundColor: Colors.white,
-            icon: AntDesign.google,
-            text: "Continue with Google",
-          ),
-          const SizedBox(height: 15),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: RichText(
-              text: TextSpan(
-                text: 'By continuing, you agree to the ',
-                style: TextStyle(
-                  color: Color.fromRGBO(102, 211, 246, 1),
-                  fontSize: 16,
-                ),
-                children: [
-                  TextSpan(
-                    text: 'Terms and Conditions',
-                    style: GoogleFonts.poppins(
-                      color: Color.fromRGBO(102, 211, 246, 1),
-                      fontWeight: FontWeight.bold,
-                    ),
+            Text(
+              "Sign Up/Login for",
+              style: GoogleFonts.poppins(
+                fontSize: 20,
+                color: const Color.fromRGBO(102, 211, 246, 1),
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Text(
+              "toddddler",
+              style: toddddler(),
+            ),
+            const SizedBox(
+              height: 45,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MyNumberPage(),
                   ),
-                  TextSpan(text: ' and confirm you have read '),
-                  TextSpan(
-                    text: 'Privacy Policy',
-                    style: GoogleFonts.poppins(
-                      color: Color.fromRGBO(102, 211, 246, 1),
-                      fontWeight: FontWeight.bold,
+                );
+              },
+              child: const CustomContainer(
+                iconColor: Colors.white,
+                textColor: Colors.white,
+                backgroundColor: Color.fromRGBO(102, 211, 246, 1),
+                icon: FontAwesome.mobile_phone,
+                text: "Phone Number",
+              ),
+            ),
+            const SizedBox(height: 15),
+            const CustomContainer(
+              iconColor: Colors.black12,
+              textColor: Colors.black87,
+              backgroundColor: Colors.white,
+              icon: AntDesign.google,
+              text: "Continue with Google",
+            ),
+            const SizedBox(height:28),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: RichText(
+                text: TextSpan(
+                  text: '      By continuing, you agree to the ',
+                  style: GoogleFonts.poppins(
+                    color: const Color.fromRGBO(102, 211, 246, 1),
+                    fontSize: 14,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: 'Terms and Conditions',
+                      style: GoogleFonts.poppins(
+                        color: Color.fromRGBO(102, 211, 246, 1),
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
+                    TextSpan(text: ' and confirm you have read '),
+                    TextSpan(
+                      text: 'Privacy Policy',
+                      style: GoogleFonts.poppins(
+                        color: Color.fromRGBO(102, 211, 246, 1),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 180,
+            ),
+            Container(
+            
+              decoration: BoxDecoration(
+                color: Colors.grey.shade200,
+                borderRadius: BorderRadius.circular(50),
+              ),
+              height: 80,
+              width: 380,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                 GestureDetector(
+                    onTap: () => onTabTapped(0),
+                    child: buildIcon(Icons.home, currentIndex, 0),
+                  ),
+                  GestureDetector(
+                    onTap: () => onTabTapped(1),
+                    child: buildIcon(Ionicons.compass, currentIndex, 1),
+                  ),
+                  GestureDetector(
+                    onTap: () => onTabTapped(2),
+                    child: buildIcon(Icons.person, currentIndex, 2),
                   ),
                 ],
               ),
             ),
-          ),
-          SizedBox(
-            height: 200,
-          ),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.grey.shade200,
-              borderRadius: BorderRadius.circular(50),
-            ),
-            height: 80,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                buildIcon(Icons.home),
-                buildIcon(Ionicons.compass),
-                buildIcon(Icons.person),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
-  Widget buildIcon(IconData icon) {
+  Widget buildIcon(IconData icon,int currentIndex,int index,) {
     return Icon(
       icon,
       size: 40,
-      color: Colors.grey.shade300,
+      color: currentIndex == index ? Color.fromRGBO(33, 39, 56, 1) : Colors.grey.shade500,
     );
   }
 }

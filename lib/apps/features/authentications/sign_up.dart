@@ -43,7 +43,7 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
             SizedBox(
               width: 400,
-              child: phoneNumberWidget(),
+              child: phoneNumberWidget(BorderRadius.circular(30)),
             ),
             SizedBox(
               height: 20,
