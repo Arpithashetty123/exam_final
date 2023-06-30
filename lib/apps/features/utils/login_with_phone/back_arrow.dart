@@ -7,21 +7,21 @@ class BackArrowWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-                height: 60,
-                width: 60,
-                decoration: BoxDecoration(
-                  color: Color.fromRGBO(102, 211, 246, 1),
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                child: IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
-                      size: 35,
-                    )),
-              );
+      height: 60,
+      width: 60,
+      decoration: BoxDecoration(
+        color: Color.fromRGBO(102, 211, 246, 1),
+        borderRadius: BorderRadius.circular(14),
+      ),
+      child: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+            size: 35,
+          )),
+    );
   }
 }

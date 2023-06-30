@@ -12,24 +12,22 @@ class BottomNavPage extends StatefulWidget {
 class _BottomNavPageState extends State<BottomNavPage> {
   @override
   Widget build(BuildContext context) {
-    return  BottomNavigationBar(
-       elevation: 0,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Feather.heart),
-            label: 'Likes',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesome.bookmark_o),
-            label: 'Saved',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(AntDesign.sharealt),
-            label: 'share',
-          ),
-        ], 
-      
-      
+    return BottomNavigationBar(
+      elevation: 0,
+      items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Feather.heart),
+          label: 'Likes',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(FontAwesome.bookmark_o),
+          label: 'Saved',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(AntDesign.sharealt),
+          label: 'share',
+        ),
+      ],
     );
   }
 }

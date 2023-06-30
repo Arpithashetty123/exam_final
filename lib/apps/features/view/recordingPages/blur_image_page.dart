@@ -2,10 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/apps/features/view/recordingPages/post_page.dart';
+import 'package:flutter_application_1/apps/features/utils/pagestyle.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import '../../utils/recordings/container_widget.dart';
 
 class BlurPage extends StatefulWidget {
@@ -16,63 +14,64 @@ class BlurPage extends StatefulWidget {
 }
 
 class _BlurPageState extends State<BlurPage> {
+  final String backgroundImage = "assets/images/Rectangle 75.png";
+
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Stack(
         children: [
           Container(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/Rectangle 75.png"),
+                image: AssetImage(backgroundImage),
                 fit: BoxFit.cover,
               ),
             ),
           ),
           BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 20.0, sigmaY: 40.0, tileMode: TileMode.clamp),
-            child: Container(
-              height: double.infinity,
-              child: Center(
-                child: Container(
-                  height: 600,
-                  child: Image.asset("assets/images/Rectangle 75.png"),
-                ),
+            filter: ImageFilter.blur(
+                sigmaX: 20.0, sigmaY: 40.0, tileMode: TileMode.clamp),
+            child: Center(
+              child: SizedBox(
+                height: screenHeight * 0.6,
+                child: Image.asset(backgroundImage),
               ),
             ),
           ),
           Positioned(
-            top: 55,
-            left: 30,
+            top: screenHeight * 0.055,
+            left: screenWidth * 0.03,
             child: IconButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(AntDesign.close, color: Colors.white, size: 30),
+              icon: Icon(AntDesign.close,
+                  color: Colors.white, size: screenWidth * 0.075),
             ),
           ),
           Positioned(
-            bottom: 35,
+            bottom: screenHeight * 0.120,
+            left: screenWidth * 0.40,
+            child: Text(
+              "Post with?",
+              style: postColour(),
+            ),
+          ),
+          Positioned(
+            bottom: screenHeight * 0.035,
             left: 0,
             right: 0,
             child: Center(
-              child: RecordedPageContainer(  height: 70,
-      width: 205,),
-            ),
-          ),
-          Positioned(
-            bottom: 115,
-            left: 165,
-           
-              child: Text(
-                "Post with?",
-                style: GoogleFonts.poppins(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                ),
+              child: RecordedPageContainer(
+                height: screenHeight * 0.08,
+                width: screenWidth * 0.50,
               ),
             ),
-          
+          ),
         ],
       ),
     );

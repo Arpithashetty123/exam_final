@@ -6,6 +6,7 @@ class CustomInputContainer extends StatelessWidget {
   final IconData sufixIcon;
 
   const CustomInputContainer({
+    super.key,
     required this.hintText,
     required this.sufixIcon,
   });
@@ -13,7 +14,9 @@ class CustomInputContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 0,),
+      padding: const EdgeInsets.only(
+        left: 0,
+      ),
       child: Container(
         width: 400,
         height: 65,
@@ -33,13 +36,12 @@ class CustomInputContainer extends StatelessWidget {
               child: TextField(
                 decoration: InputDecoration(
                   hintText: hintText,
-
                   border: InputBorder.none,
                   hintStyle: GoogleFonts.poppins(
                     color: Colors.grey.shade400,
                   ),
                 ),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                 ),
                 cursorColor: Colors.black,
@@ -47,7 +49,7 @@ class CustomInputContainer extends StatelessWidget {
                 autofocus: false,
               ),
             ),
-             Icon(
+            Icon(
               sufixIcon,
               color: Colors.grey.shade600,
             ),

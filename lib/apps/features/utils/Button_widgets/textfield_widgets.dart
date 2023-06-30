@@ -4,22 +4,21 @@ import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextFieldWidget extends StatelessWidget {
-   TextFieldWidget({Key? key});
+  TextFieldWidget({Key? key});
 
   final OutlineInputBorder focusedInputBorder = OutlineInputBorder(
-    borderSide: BorderSide(color: Colors.blue, width: 3),
+    borderSide: const BorderSide(color: Colors.blue, width: 3),
     borderRadius: BorderRadius.circular(10),
   );
 
   final InputDecoration commonInputDecoration = InputDecoration(
-     enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(width: 3,color: Colors.black)
-                  ),
+    enabledBorder: const OutlineInputBorder(
+        borderSide: BorderSide(width: 3, color: Colors.black)),
     prefixIconColor: Colors.black,
     hintStyle: GoogleFonts.poppins(color: Colors.grey.shade400),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(5),
-      borderSide: BorderSide(color: Colors.black, width: 3),
+      borderSide: const BorderSide(color: Colors.black, width: 3),
     ),
   );
 
@@ -45,7 +44,6 @@ class TextFieldWidget extends StatelessWidget {
           child: TextField(
             obscureText: true,
             decoration: commonInputDecoration.copyWith(
-              
               focusedBorder: focusedInputBorder.copyWith(
                 borderSide: BorderSide(color: Colors.blue.shade400, width: 3),
               ),

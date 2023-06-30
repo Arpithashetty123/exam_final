@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/apps/features/authentications/sign_up.dart';
+
 import 'package:flutter_application_1/apps/features/utils/pagestyle.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../myrouter/routes.dart';
 import '../utils/Button_widgets/container_widget.dart';
 import '../utils/Button_widgets/textfield_widgets.dart';
 
@@ -18,13 +19,15 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-            padding: EdgeInsets.only(left: 25,right: 25),
-          child: Column(
-            children: [
+          padding: EdgeInsets.only(left: 25, right: 25),
+          child: Column(children: [
             const SizedBox(
               height: 150,
             ),
-           Image.asset("assets/images/child-4.png",scale: 0.8,),
+            Image.asset(
+              "assets/images/child-4.png",
+              scale: 0.8,
+            ),
             const SizedBox(
               height: 12,
             ),
@@ -37,24 +40,25 @@ class _LoginPageState extends State<LoginPage> {
             ),
             TextFieldWidget(),
             SizedBox(height: 50),
-            LoginButton(
-                borderRadius: 10,
-                height: 70,
-                width: 400,
-                containerColor: Color.fromRGBO(33, 39, 56, 1),
-                childWidget: Center(
-                  child: Text("Log In", style: loginColour()),
-                )),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.homeScreen);
+              },
+              child: LoginButton(
+                  borderRadius: 10,
+                  height: 70,
+                  width: 400,
+                  containerColor: Color.fromRGBO(33, 39, 56, 1),
+                  childWidget: Center(
+                    child: Text("Log In", style: loginColour()),
+                  )),
+            ),
             SizedBox(
               height: 40,
             ),
             InkWell(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SignUpPage(),
-                      ));
+                  Navigator.pushNamed(context, MyRoutes.signUpScreen);
                 },
                 child: Text(
                   "Or Sign Up",

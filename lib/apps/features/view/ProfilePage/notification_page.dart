@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../utils/follows_widget.dart';
+import 'package:flutter_application_1/apps/features/utils/pagestyle.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../../../../myrouter/routes.dart';
+import '../../utils/settingsPage/follows_widget.dart';
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({Key? key});
@@ -22,31 +24,44 @@ class _NotificationPageState extends State<NotificationPage> {
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
+        elevation: 1,
         backgroundColor: Colors.white,
-        leading: const Icon(
-          Icons.arrow_back,
-          color: Colors.blue,
+        leading: IconButton(
+          onPressed: () {
+           Navigator.pushNamed(context, MyRoutes.profilePage);
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.blue,
+            size: screenWidth * 0.075,
+          ),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 30, top: 50, right: 20),
+        padding: EdgeInsets.only(
+            left: screenWidth * 0.055,
+            top: screenHeight * 0.03,
+            right: screenWidth * 0.06),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Notifications",
-              style: const TextStyle(fontSize: 40),
+              style: verificationColour(),
             ),
-            const SizedBox(
-              height: 60,
+            SizedBox(
+              height: screenHeight * 0.04,
             ),
             Container(
-              height: 60,
+              height: screenHeight * 0.068,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: Colors.lightBlue,
+                borderRadius: BorderRadius.circular(screenHeight * 0.04),
+                color: Color.fromARGB(255, 220, 246, 255),
               ),
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -59,18 +74,27 @@ class _NotificationPageState extends State<NotificationPage> {
                       });
                     },
                     child: Padding(
-                      padding: const EdgeInsets.only(bottom: 5, top: 5, left: 5),
+                      padding: EdgeInsets.only(
+                          top: screenHeight * 0.0125,
+                          bottom: screenHeight * 0.0125),
                       child: Container(
                         alignment: Alignment.center,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: screenWidth * 0.05),
                         decoration: BoxDecoration(
-                          color: selectedIndex == index ? Colors.blue : Colors.transparent,
-                          borderRadius: BorderRadius.circular(30),
+                          color: selectedIndex == index
+                              ? Color.fromRGBO(102, 211, 246, 1)
+                              : Colors.transparent,
+                          borderRadius:
+                              BorderRadius.circular(screenHeight * 0.04),
                         ),
                         child: Text(
                           categories[index],
-                          style: TextStyle(
-                            color: selectedIndex == index ? Colors.white : Colors.black,
+                          style: GoogleFonts.poppins(
+                            color: selectedIndex == index
+                                ? Colors.white
+                                : Colors.black,
+                            fontSize: screenWidth * 0.03,
                           ),
                         ),
                       ),
@@ -79,7 +103,7 @@ class _NotificationPageState extends State<NotificationPage> {
                 },
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: screenHeight * 0.04),
             Expanded(
               child: contentWidgets[selectedIndex],
             ),

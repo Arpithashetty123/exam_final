@@ -2,20 +2,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 // ignore: must_be_immutable
 class CustomOtherSignupButton extends StatelessWidget {
   String text;
   String assetPath;
   Color textColor;
   Color buttonColor;
-  CustomOtherSignupButton({
-    Key? key,
-    required this.text,
-    required this.assetPath,
-     required this.textColor,
-     required this.buttonColor
-  }) : super(key: key);
+  CustomOtherSignupButton(
+      {Key? key,
+      required this.text,
+      required this.assetPath,
+      required this.textColor,
+      required this.buttonColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +37,9 @@ class CustomOtherSignupButton extends StatelessWidget {
               width: 30,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(assetPath,),
+                  image: AssetImage(
+                    assetPath,
+                  ),
                 ),
               ),
             ),
@@ -48,9 +49,7 @@ class CustomOtherSignupButton extends StatelessWidget {
             Text(
               text,
               style: GoogleFonts.poppins(
-                  fontSize: 22,
-                  color:textColor,
-                  fontWeight: FontWeight.w400),
+                  fontSize: 22, color: textColor, fontWeight: FontWeight.w400),
             ),
           ],
         ),

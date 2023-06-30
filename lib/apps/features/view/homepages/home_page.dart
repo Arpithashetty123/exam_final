@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/apps/features/utils/home_page_widget/latest_blog_widget.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../utils/home_page_widget/bottom_navigation.dart';
-import '../utils/home_page_widget/categories.dart';
-import '../utils/home_page_widget/story_widget.dart';
-import 'recordingPages/blog_page_info.dart';
+import '../../../../myrouter/routes.dart';
+import '../../utils/home_page_widget/bottom_navigation.dart';
+import '../../utils/home_page_widget/categories.dart';
+import '../../utils/home_page_widget/story_widget.dart';
+import 'blog_page_info.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -45,7 +46,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
            StoryWidget(),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
             Text(
               "   Categories",
               style: GoogleFonts.poppins(
@@ -61,11 +62,9 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 20),
             GestureDetector(
-              onTap: () {
-                Navigator.push(context, DialogRoute(context: context, builder: (context) {
-                  return BlogDetailsPage();
-                },));
-              },
+            onTap: () {
+               Navigator.pushNamed(context, MyRoutes.blogdetailspage);
+            },
               child: const LatestBlogWidget(
                   imagePath: "assets/images/girl_image.png",
                   mainText: "My Experience : The Second Time",

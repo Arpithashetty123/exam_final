@@ -9,10 +9,12 @@ class CustomContainer extends StatelessWidget {
   final Color iconColor;
 
   const CustomContainer({
+    super.key,
     required this.icon,
     required this.text,
     required this.backgroundColor,
-    required this.textColor, required this.iconColor,
+    required this.textColor,
+    required this.iconColor,
   });
 
   @override
@@ -21,39 +23,29 @@ class CustomContainer extends StatelessWidget {
       height: 80,
       width: 350,
       decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: BorderRadius.circular(35),
-        boxShadow: [
-          BoxShadow(
-
-        color: Colors.grey.withOpacity(0.2),
-        blurRadius: 4,
-        offset: Offset(0, 3),
-        spreadRadius: 2,
-      
-          )
-        ]
-      ),
+          color: backgroundColor,
+          borderRadius: BorderRadius.circular(35),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.2),
+              blurRadius: 4,
+              offset: Offset(0, 3),
+              spreadRadius: 2,
+            )
+          ]),
       padding: EdgeInsets.all(10),
-      child: Row(
-      
-        children: [
-          SizedBox(width: 5),
-          Icon(
-            icon,
-            size: 40,
-            color:iconColor
+      child: Row(children: [
+        SizedBox(width: 5),
+        Icon(icon, size: 40, color: iconColor),
+        SizedBox(width: 12),
+        Text(
+          text,
+          style: GoogleFonts.poppins(
+            color: textColor,
+            fontSize: 20,
           ),
-          SizedBox(width: 12),
-          Text(
-            text,
-            style: GoogleFonts.poppins(
-              color: textColor,
-              fontSize: 20,
-            ),
-          ),
-        ]
-      ),
+        ),
+      ]),
     );
   }
 }

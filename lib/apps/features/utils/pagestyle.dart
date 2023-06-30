@@ -16,7 +16,7 @@ TextStyle toddddler1() {
       color: Color.fromRGBO(102, 215, 246, 1),
 
       ///  fontWeight: FontWeight.,
-      fontSize: 45);
+      fontSize: 46);
 }
 
 TextStyle loginColour() {
@@ -50,4 +50,11 @@ TextStyle cameAccessColour() {
     fontWeight: FontWeight.w400,
     fontSize: 15,
   );
+}
+
+TextStyle postColour() {
+  return GoogleFonts.poppins(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                  );
 }

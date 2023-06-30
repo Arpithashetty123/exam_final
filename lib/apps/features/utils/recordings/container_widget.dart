@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/apps/features/view/recordingPages/post_page.dart';
 
+import '../../../../myrouter/routes.dart';
 import 'circle_avatr_widget.dart';
 
 class RecordedPageContainer extends StatelessWidget {
@@ -20,14 +21,10 @@ class RecordedPageContainer extends StatelessWidget {
       ),
       child: Row(
         children: [
-          SizedBox(width: 5),
+          SizedBox(width: 8),
           GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return PostPage();
-                  },
-                ));
+                Navigator.pushNamed(context, MyRoutes.postPage);
               },
               child: buildCircleAvatar(
                 "assets/images/Ellipse 8.png",
@@ -36,11 +33,7 @@ class RecordedPageContainer extends StatelessWidget {
           SizedBox(width: 12),
           GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return PostPage();
-                  },
-                ));
+              Navigator.pushNamed(context, MyRoutes.postPage);
               },
               child: buildCircleAvatar(
                   "assets/images/Ellipse 11.png", Colors.green)),
@@ -49,7 +42,7 @@ class RecordedPageContainer extends StatelessWidget {
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(
                   builder: (context) {
-                    return PostPage();
+                    return const PostPage();
                   },
                 ));
               },
@@ -60,5 +53,3 @@ class RecordedPageContainer extends StatelessWidget {
     );
   }
 }
-// when i click each circle avatar ,it should go to ist own postinfo page which contain the same image , 
-//along with that at the top should show remaaing two circle avatar

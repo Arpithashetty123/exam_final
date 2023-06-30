@@ -2,24 +2,23 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/apps/features/utils/pagestyle.dart';
 import 'package:flutter_application_1/apps/features/view/settings_page/set_name.dart';
-
-import 'package:flutter_font_icons/flutter_font_icons.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import '../../utils/Button_widgets/text_button.dart';
 import '../../utils/settingsPage/app_bar_widget.dart';
-import 'Bio_page.dart';
+
 
 class SetUserNamePage extends StatefulWidget {
-  const  SetUserNamePage({super.key});
+  const SetUserNamePage({Key? key});
 
   @override
-  State< SetUserNamePage> createState() => _SetUserNamePageState();
+  State<SetUserNamePage> createState() => _SetUserNamePageState();
 }
 
-class _SetUserNamePageState extends State< SetUserNamePage> {
+class _SetUserNamePageState extends State<SetUserNamePage> {
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBarWidget(
         onLeadingPressed: () {
@@ -33,28 +32,33 @@ class _SetUserNamePageState extends State< SetUserNamePage> {
           ));
         },
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 30, top: 80,right: 20),
+      body: 
+        Padding(
+        padding: EdgeInsets.only(
+          left: screenWidth * 0.08,
+          top: screenHeight * 0.07,
+          right: screenWidth * 0.05,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Set Your User Name",
-              style:verificationColour(),
+              style: verificationColour(),
+            ),
+             SizedBox(
+              height: screenHeight * 0.08,
             ),
             SizedBox(
-              height: 60,
+              width: screenWidth * 0.8,
+              child: TextButtonWidget(
+                "Set User Name",
+                BorderRadius.circular(screenWidth * 0.3),
+              ),
             ),
-           SizedBox(
-                width: 400,
-                child: TextButtonWidget(
-                    "Set User Name", BorderRadius.circular(30))),
-            
-          ]
-           )
-          
+          ],
         ),
-      );
-  
+      ),
+    );
   }
 }

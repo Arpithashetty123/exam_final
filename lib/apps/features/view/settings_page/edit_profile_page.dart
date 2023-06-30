@@ -1,97 +1,120 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/apps/features/utils/Button_widgets/container_widget.dart';
 import 'package:flutter_application_1/apps/features/utils/pagestyle.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../utils/home_page_widget/bottom_navigation.dart';
+import '../../../../myrouter/routes.dart';
+import '../../utils/login_with_phone/nav_container.dart';
+import '../../utils/settingsPage/change-image_container.dart';
+import '../ProfilePage/settings_page.dart';
 
 class EditProfilePage extends StatelessWidget {
   final List<Map<String, dynamic>> profileList;
+  final String text;
 
-  const EditProfilePage({Key? key, required this.profileList}) : super(key: key);
+  const EditProfilePage(
+      {Key? key, required this.profileList, required this.text})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Edit your Profile",
-            style: verificationColour(),
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          LoginButton(
-            height: 60,
-            width: 350,
-            borderRadius: 30,
-            containerColor: Color.fromARGB(255, 241, 247, 252),
-            childWidget: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Profile", style: GoogleFonts.poppins(fontSize: 18)),
-                Container(
-                  height: 60,
-                  width: 120,
-                  decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(30)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      CircleAvatar(
-                        radius: 25,
-                        backgroundImage: AssetImage("assets/images/Ellipse 9.png"),
-                      ),
-                      Icon(
-                        EvilIcons.chevron_right,
-                        size: 40,
-                        color: Colors.black,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+      appBar: AppBar(backgroundColor: Colors.white, actions: [
+        IconButton(
+          icon: const Badge(
+            child: Icon(
+              Ionicons.notifications,
+              color: Colors.black,
+              size: 30,
             ),
           ),
-          Container(
-            height: 480,
-            width: 380,
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 241, 247, 252),
-              borderRadius: BorderRadius.circular(30),
-            ),
-            padding: EdgeInsets.all(10),
-            child: ListView.builder(
-              itemCount: profileList.length,
-              itemBuilder: (context, index) {
-                final setting = profileList[index];
-                return Column(
-                  children: [
-                    ListTile(
-                      leading: Text(setting['Name'], style: GoogleFonts.poppins(fontSize: 15)),
-                      title: Text(setting['UserName'], style: GoogleFonts.poppins(fontSize: 15)),
-                      trailing: Icon(setting['icon'], size: 40, color: Colors.black),
-                    ),
-                    if (index < profileList.length - 1)
-                      const Divider(
-                        color: Color.fromARGB(255, 200, 230, 255),
-                        thickness: 1,
-                        height: 20,
-                      ),
-                  ],
-                );
+          onPressed: () {
+            Navigator.pushNamed(context, MyRoutes.notificationpage);
+          },
+        ),
+        IconButton(
+          icon: Icon(
+            Icons.settings,
+            size: 30,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) {
+                return SettingsPage();
               },
+            ));
+          },
+        ),
+      ]),
+      body: Padding(
+        padding: EdgeInsets.only(
+            left: screenWidth * 0.1,
+            top: screenHeight * 0.03,
+            right: screenWidth * 0.08),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              text,
+              style: verificationColour(),
             ),
-          ),
-          Text("Delete Account", style: GoogleFonts.poppins(color: Colors.red, fontSize: 25)),
-          BottomNavBar(),
-        ],
+            SizedBox(
+              height: screenHeight * 0.03,
+            ),
+            ProfileEditWidget(),
+            SizedBox(height: screenHeight * 0.02),
+            Container(
+              height: screenHeight * 0.42,
+              width: screenWidth * 0.99,
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 241, 247, 252),
+                borderRadius: BorderRadius.circular(screenWidth * 0.08),
+              ),
+              padding: EdgeInsets.all(screenWidth * 0.02),
+              child: ListView.builder(
+                itemCount: profileList.length,
+                itemBuilder: (context, index) {
+                  final setting = profileList[index];
+                  return Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: screenWidth * 0.01,
+                            right: screenWidth * 0.01),
+                        child: ListTile(
+                          leading: Text(setting['Name'],
+                              style: GoogleFonts.poppins(fontSize: 15)),
+                          title: Text(setting['UserName'],
+                              style: GoogleFonts.poppins(fontSize: 15)),
+                          trailing: Icon(setting['icon'],
+                              size: 35, color: Colors.black),
+                        ),
+                      ),
+                      if (index < profileList.length - 1)
+                        Divider(
+                          color: Color.fromARGB(255, 200, 230, 255),
+                          thickness: 1,
+                          height: screenWidth * 0.04,
+                        ),
+                    ],
+                  );
+                },
+              ),
+            ),
+            SizedBox(height: screenHeight * 0.030),
+            Center(
+                child: Text("Delete Account",
+                    style: GoogleFonts.poppins(
+                        color: Color.fromARGB(255, 248, 74, 132),
+                        fontSize: screenWidth * 0.05))),
+            SizedBox(height: screenHeight * 0.10),
+            NavContainer(),
+          ],
+        ),
       ),
     );
   }

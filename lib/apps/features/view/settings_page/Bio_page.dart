@@ -1,10 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/apps/features/utils/pagestyle.dart';
-import 'package:flutter_application_1/apps/features/view/settings_page/set_name.dart';
-import 'package:flutter_application_1/apps/features/view/settings_page/set_user_name.dart';
-import 'package:flutter_font_icons/flutter_font_icons.dart';
-
+import '../../../../myrouter/routes.dart';
 import '../../utils/settingsPage/app_bar_widget.dart';
 
 class BioPage extends StatefulWidget {
@@ -14,24 +11,25 @@ class BioPage extends StatefulWidget {
 }
 
 class _BioPageState extends State<BioPage> {
-
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBarWidget(
         onLeadingPressed: () {
           Navigator.pop(context);
         },
         onActionPressed: () {
-          Navigator.push(context, MaterialPageRoute(
-            builder: (context) {
-              return SetUserNamePage();
-            },
-          ));
+          Navigator.pushNamed(context, MyRoutes.setUserNamePage);
         },
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 30, top: 50, right: 20),
+        padding: EdgeInsets.only(
+          left: screenWidth * 0.08,
+          top: screenHeight * 0.05,
+          right: screenWidth * 0.05,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -39,11 +37,13 @@ class _BioPageState extends State<BioPage> {
               "Bio",
               style: verificationColour(),
             ),
-            SizedBox(height: 60),
+            SizedBox(
+              height: screenHeight * 0.06,
+            ),
             Expanded(
               child: TextField(
-             minLines: 10,
-             maxLength: 150,
+                minLines: 10,
+                maxLength: 150,
                 cursorColor: Colors.grey,
                 maxLines: null,
                 decoration: InputDecoration(
@@ -55,7 +55,6 @@ class _BioPageState extends State<BioPage> {
                 ),
               ),
             ),
-            
           ],
         ),
       ),

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 
-import '../../view/settings_page/Bio_page.dart';
+
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback onLeadingPressed;
@@ -25,19 +25,19 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.white,
       leading: IconButton(
         onPressed: onLeadingPressed,
-        icon: Icon(
+        icon: const Icon(
           Icons.arrow_back,
           size: 35,
-          color: const Color.fromRGBO(102, 211, 246, 1),
+          color: Color.fromRGBO(102, 211, 246, 1),
         ),
       ),
       actions: [
         IconButton(
           onPressed: onActionPressed,
-          icon: Icon(
+          icon: const Icon(
             Feather.check,
             size: 35,
-            color: const Color.fromRGBO(102, 211, 246, 1),
+            color: Color.fromRGBO(102, 211, 246, 1),
           ),
         )
       ],

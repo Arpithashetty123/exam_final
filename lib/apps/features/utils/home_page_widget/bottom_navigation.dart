@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/apps/features/view/recordingPages/cam_access_page.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 
-import '../../view/accountPages/account_page.dart';
+import '../../../../myrouter/routes.dart';
 
 class BottomNavBar extends StatefulWidget {
   @override
@@ -32,18 +31,17 @@ class _BottomNavBarState extends State<BottomNavBar> {
             height: 60,
             width: 60,
             decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: currentIndex == 2 ?   const Color.fromARGB(255, 8, 47, 65): const Color.fromRGBO(102, 211, 246, 1)
-            ),
+                shape: BoxShape.circle,
+                color: currentIndex == 2
+                    ? const Color.fromARGB(255, 8, 47, 65)
+                    : const Color.fromRGBO(102, 211, 246, 1)),
             child: IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.camera_alt,
                 color: Colors.white,
               ),
               onPressed: () {
-                Navigator.push(context,MaterialPageRoute(builder: (context) {
-                  return CameAccessPage();
-                },));
+                Navigator.pushNamed(context, MyRoutes.cameAccessPage);
                 onTabTapped(2);
               },
             ),
@@ -59,7 +57,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: currentIndex == index ? Color.fromRGBO(33, 39, 56, 1) : Colors.grey.shade200,
+        color: currentIndex == index
+            ? Color.fromRGBO(33, 39, 56, 1)
+            : Colors.grey.shade200,
       ),
       child: Center(
         child: IconButton(
@@ -80,7 +80,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: currentIndex == index ? Color.fromRGBO(33, 39, 56, 1) : Colors.grey.shade200,
+        color: currentIndex == index
+            ? Color.fromRGBO(33, 39, 56, 1)
+            : Colors.grey.shade200,
       ),
       child: Center(
         child: IconButton(
@@ -90,10 +92,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             color: Colors.white,
           ),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => MainInfoPage()),
-            );
+            Navigator.pushNamed(context, MyRoutes.mainInfoPage);
             onTabTapped(index);
           },
         ),

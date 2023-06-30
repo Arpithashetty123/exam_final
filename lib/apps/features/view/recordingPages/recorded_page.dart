@@ -1,57 +1,55 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/apps/features/view/recordingPages/post_page.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
-import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../myrouter/routes.dart';
 import '../../utils/icon_widget.dart';
+import '../../utils/pagestyle.dart';
 import '../../utils/recordings/container_widget.dart';
-import 'blur_image_page.dart';
 
 class RecordedPage extends StatelessWidget {
-  const RecordedPage({Key? key});
+  const RecordedPage({Key? key, required this.backgroundImage})
+      : super(key: key);
+
+  final String backgroundImage;
 
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
+
     return SafeArea(
       child: Scaffold(
         body: Container(
-          height: double.infinity,
-          width: double.infinity,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/images/Rectangle 75.png"),
+              image: AssetImage(backgroundImage),
               fit: BoxFit.cover,
             ),
           ),
           child: Stack(
             children: [
-              Align(
-                alignment: Alignment.topCenter,
-                child: Text(
-                  "1  min",
-                  style: GoogleFonts.poppins(color: Colors.white, fontSize: 15),
-                ),
-              ),
               Positioned(
-                top: 40,
-                left: 30,
+                top: screenHeight * 0.03,
+                left: screenWidth * 0.048,
                 child: Row(
                   children: [
-                    SizedBox(width: 10),
+                    SizedBox(width: screenWidth * 0.010),
                     IconButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },
                       icon: buildIcon(AntDesign.close),
                     ),
-                    SizedBox(width: 250),
+                    SizedBox(width: screenWidth * 0.30),
+                    Text(
+                      "1  min",
+                      style: postColour(),
+                    ),
+                    SizedBox(width: screenWidth * 0.190),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => BlurPage()),
-                        );
+                        Navigator.pushNamed(context, MyRoutes.blurPage);
                       },
                       child: buildIcon(Fontisto.smiley),
                     ),
@@ -59,27 +57,26 @@ class RecordedPage extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 25,
-                right: 8,
+                top: screenHeight * 0.012,
+                right: screenWidth * 0.06,
                 child: IconButton(
                   onPressed: () {},
-                  icon: Icon(AntDesign.star, color: Colors.white, size: 10),
+                  icon: Icon(AntDesign.star,
+                      color: Colors.white, size: screenWidth * 0.024),
                 ),
               ),
               Positioned(
-                bottom: 60,
-                left: 100,
-                child: RecordedPageContainer(height: 70,width: 205),
+                bottom: screenHeight * 0.100,
+                left: screenWidth * 0.25,
+                child: RecordedPageContainer(
+                    height: screenHeight * 0.080, width: screenWidth * 0.500),
               ),
               Positioned(
-                bottom: 140,
-                left: 160,
-              child: Text(
+                bottom: screenHeight * 0.19,
+                left: screenWidth * 0.40,
+                child: Text(
                   "Post with?",
-                  style: GoogleFonts.poppins(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: postColour(),
                 ),
               ),
             ],
@@ -89,4 +86,3 @@ class RecordedPage extends StatelessWidget {
     );
   }
 }
-
