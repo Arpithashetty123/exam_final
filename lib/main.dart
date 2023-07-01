@@ -10,6 +10,9 @@ import 'package:flutter_application_1/apps/features/view/accountPages/number_pag
 import 'package:flutter_application_1/apps/features/view/accountPages/verification_page.dart';
 import 'package:flutter_application_1/apps/features/view/accountPages/welcome_page.dart';
 import 'package:flutter_application_1/apps/features/view/homepages/blog_page_info.dart';
+import 'package:flutter_application_1/apps/features/view/newFiles/for_you_page.dart';
+import 'package:flutter_application_1/apps/features/view/newFiles/mainscreen.dart';
+import 'package:flutter_application_1/apps/features/view/newFiles/nearbuy.dart';
 import 'package:flutter_application_1/apps/features/view/recordingPages/blur_image_page.dart';
 import 'package:flutter_application_1/apps/features/view/recordingPages/cam_access_page.dart';
 import 'package:flutter_application_1/apps/features/view/recordingPages/post_page.dart';
@@ -38,7 +41,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color.fromRGBO(223, 239, 247, 1),
         primarySwatch: Colors.blue,
       ),
-      initialRoute: MyRoutes.splashPage,
+      initialRoute: MyRoutes.nearbuy,
       routes: {
         MyRoutes.splashPage: (context) => SplashPage(),
         MyRoutes.mainscreen: (context) => MainScreenPage(),
@@ -62,6 +65,10 @@ class MyApp extends StatelessWidget {
         MyRoutes.editProfileWidget: (context) => EditProfileWidget(),
         MyRoutes.blurPage: (context) => BlurPage(),
          MyRoutes.addChildWiget: (context) => AddChildWiget(),
+           MyRoutes.nearbuy: (context) => nearbuy(),
+           MyRoutes.forYouPage: (context) => ForYouPage(),
+             MyRoutes.findPage: (context) => FindPage(),
+
       },
     );
   }

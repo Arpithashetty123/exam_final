@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/apps/features/view/newFiles/for_you_page.dart';
 
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../view/newFiles/nearbuy.dart';
 import '../Button_widgets/sinup_buttom.dart';
 
 import 'circle_avatr_widget.dart';
@@ -62,10 +64,17 @@ class PostContainer extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const SinUpButton(
-            containerColor: Color.fromRGBO(102, 211, 246, 1),
-            text: "Post",
-            textColor: Colors.black,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return nearbuy();
+              },));
+            },
+            child: const SinUpButton(
+              containerColor: Color.fromRGBO(102, 211, 246, 1),
+              text: "Post",
+              textColor: Colors.black,
+            ),
           )
         ],
       ),

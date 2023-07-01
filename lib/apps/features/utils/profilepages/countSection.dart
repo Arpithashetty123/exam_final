@@ -21,9 +21,27 @@ Widget buildCountSection(String title, int count) {
   }
 
   Widget buildNewPostSection() {
-    return Container();
+    return Container(
+      height: 900,
+      width: 300,
+      child: GridView.builder(
+        itemCount: 10,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3), 
+        itemBuilder: (context, index) {
+          return Image.asset("assets/images/Rectangle 37.png");
+        },),
+    );
   }
 
   Widget buildTaggedSection() {
-    return Container();
+    return Container(
+      height: 900,
+      width: 300,
+      child: GridView.builder(
+        itemCount: 10,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3), 
+        itemBuilder: (context, index) {
+          return Image.asset("assets/images/photo-of-child-playing-with-wooden-blocks-3933279.png");
+        },),
+    );
   }

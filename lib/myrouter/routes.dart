@@ -22,8 +22,10 @@ class MyRoutes {
                       static String setUserNamePage= '/setUserNamePage';
                      static String editProfilePage= '/editProfilePage';
                       static String editProfileWidget= '/editProfileWidget';
-                       
                          static String blurPage= '/blurPage';
+                           static String nearbuy='/reelsPage';
+                             static String forYouPage='/forYouPage';
+                             static String findPage='/findPage';
                        
                   
 }

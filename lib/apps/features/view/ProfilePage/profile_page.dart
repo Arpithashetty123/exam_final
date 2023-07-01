@@ -1,11 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../utils/Button_widgets/container_widget.dart';
-
 import '../../utils/pagestyle.dart';
 import '../../utils/profilepages/container_widget.dart';
 import '../../utils/profilepages/countSection.dart';
@@ -13,6 +10,8 @@ import '../../utils/profilepages/profileapp_bar.dart';
 import '../../utils/profilepages/tabbar.dart';
 
 class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
+
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }
@@ -23,7 +22,6 @@ class _ProfilePageState extends State<ProfilePage>
   int followingCount = 0;
   int postsCount = 0;
   int taggedCount = 0;
-
   late TabController _tabController;
 
   @override
@@ -37,7 +35,7 @@ class _ProfilePageState extends State<ProfilePage>
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          ProfileAppBar(),
+          const ProfileAppBar(),
           SliverList(
             delegate: SliverChildListDelegate([
               Padding(
@@ -66,7 +64,7 @@ class _ProfilePageState extends State<ProfilePage>
                             ),
                           ],
                         ),
-                        SizedBox(width: 30),
+                        const SizedBox(width: 30),
                         Stack(
                           alignment: Alignment.bottomCenter,
                           children: [
@@ -143,7 +141,7 @@ class _ProfilePageState extends State<ProfilePage>
                         const SizedBox(
                           width: 20,
                         ),
-                        ProfileContainerWidget()
+                        const ProfileContainerWidget()
                       ],
                     ),
                     const SizedBox(
@@ -152,7 +150,7 @@ class _ProfilePageState extends State<ProfilePage>
                     const MyTabbar(),
                     const SizedBox(height: 10),
                     SizedBox(
-                      height: 300,
+                      height: 450,
                       child: TabBarView(
                         controller: _tabController,
                         children: [
@@ -171,3 +169,45 @@ class _ProfilePageState extends State<ProfilePage>
     );
   }
 }
+/*Widget buildNewPostSection() {
+  return Container(
+    height: 300,
+    width: 300,
+    child: GridView.builder(
+      itemCount: 10,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3), 
+      itemBuilder: (context, index) {
+        // Use a list of image paths and select a different image based on the index
+        List<String> imagePaths = [
+          "assets/images/image1.png",
+          "assets/images/image2.png",
+          "assets/images/image3.png",
+          // Add more image paths here
+        ];
+        return Image.asset(imagePaths[index % imagePaths.length]);
+      },
+    ),
+  );
+}
+
+Widget buildTaggedSection() {
+  return Container(
+    height: 300,
+    width: 300,
+    child: GridView.builder(
+      itemCount: 10,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3), 
+      itemBuilder: (context, index) {
+        // Use a list of image paths and select a different image based on the index
+        List<String> imagePaths = [
+          "assets/images/image4.png",
+          "assets/images/image5.png",
+          "assets/images/image6.png",
+          // Add more image paths here
+        ];
+        return Image.asset(imagePaths[index % imagePaths.length]);
+      },
+    ),
+  );
+}
+*/ 
