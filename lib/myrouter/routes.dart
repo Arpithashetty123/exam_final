@@ -26,6 +26,10 @@ class MyRoutes {
                            static String nearbuy='/reelsPage';
                              static String forYouPage='/forYouPage';
                              static String findPage='/findPage';
+                               static String followingPage='/following';
+                                static String michealPage='/michealPage';
+                                   static String addChildPage='/addChildPag';
+                           
                        
                   
 }

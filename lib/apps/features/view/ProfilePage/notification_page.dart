@@ -44,9 +44,10 @@ class _NotificationPageState extends State<NotificationPage> {
       ),
       body: Padding(
         padding: EdgeInsets.only(
-            left: screenWidth * 0.055,
+            left: screenWidth * 0.040,
             top: screenHeight * 0.03,
-            right: screenWidth * 0.06),
+            // /right: screenWidth * 0.06
+            ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -59,6 +60,7 @@ class _NotificationPageState extends State<NotificationPage> {
             ),
             Container(
               height: screenHeight * 0.068,
+              width:screenWidth,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(screenHeight * 0.04),
                 color: Color.fromARGB(255, 220, 246, 255),
@@ -75,6 +77,7 @@ class _NotificationPageState extends State<NotificationPage> {
                     },
                     child: Padding(
                       padding: EdgeInsets.only(
+                              left: screenWidth * 0.0125,
                           top: screenHeight * 0.0125,
                           bottom: screenHeight * 0.0125),
                       child: Container(

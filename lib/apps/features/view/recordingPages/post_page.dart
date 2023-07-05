@@ -4,10 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../utils/icon_widget.dart';
 import '../../utils/recordings/circle_avatr_widget.dart';
 import '../../utils/recordings/post_container.dart';
-
 class PostPage extends StatelessWidget {
   const PostPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -34,7 +32,7 @@ class PostPage extends StatelessWidget {
                     left: 30,
                     child: Row(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         IconButton(
@@ -43,7 +41,7 @@ class PostPage extends StatelessWidget {
                           },
                           icon: buildIcon(AntDesign.close),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 250,
                         ),
                         IconButton(
@@ -53,9 +51,13 @@ class PostPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const Positioned(bottom: 0, child: PostContainer()),
+                  const Positioned(
+                    bottom: 0,
+                    left: 0,
+                  
+                 child: PostContainer()),
                   Positioned(
-                      bottom: 330,
+                      bottom: 310,
                       right: 20,
                       height: 65,
                       width: 150,

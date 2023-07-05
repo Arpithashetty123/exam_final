@@ -9,7 +9,7 @@ class IconButtonPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return LikeButton(
           size: 28,
-        
+
           likeCountPadding: const EdgeInsets.only(top: 13,left: 12),
           circleColor:
               const CircleColor(start: Color(0xff00ddff), end: Color(0xff0099cc)),
@@ -34,11 +34,12 @@ class IconButtonPage extends StatelessWidget {
                 "love",
                 style: TextStyle(color: color),
               );
-            } else
+            } else {
               result = Text(
                 text,
                 style: TextStyle(color: color),
               );
+            }
             return result;
           },
           

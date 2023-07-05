@@ -54,7 +54,12 @@ class _HomePageState extends State<HomePage> {
             ),
   const SizedBox(height: 10),
              CategoriesPage(),
+              Padding(
+                padding: const EdgeInsets.only(left: 25),
+                child: CategoriesPage(),
+              ),
             SizedBox(height: 25),
+
             Text(
               "    Latest Blog",
                style: GoogleFonts.poppins(

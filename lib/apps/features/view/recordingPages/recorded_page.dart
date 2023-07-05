@@ -69,7 +69,7 @@ class RecordedPage extends StatelessWidget {
                 bottom: screenHeight * 0.100,
                 left: screenWidth * 0.25,
                 child: RecordedPageContainer(
-                    height: screenHeight * 0.080, width: screenWidth * 0.500),
+                    height: screenHeight * 0.085, width: screenWidth * 0.515),
               ),
               Positioned(
                 bottom: screenHeight * 0.19,

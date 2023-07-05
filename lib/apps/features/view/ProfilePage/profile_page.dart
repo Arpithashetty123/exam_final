@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/apps/features/utils/login_with_phone/nav_container.dart';
+import 'package:flutter_application_1/myrouter/routes.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../utils/Button_widgets/container_widget.dart';
@@ -39,7 +41,7 @@ class _ProfilePageState extends State<ProfilePage>
           SliverList(
             delegate: SliverChildListDelegate([
               Padding(
-                padding: EdgeInsets.only(left: 15, top: 15, right: 15),
+                padding: const EdgeInsets.only(left: 15, top: 15, right: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -108,40 +110,49 @@ class _ProfilePageState extends State<ProfilePage>
                         const SizedBox(
                           width: 20,
                         ),
-                        buildCountSection('Followers', followersCount),
+                        buildCountSection('Followers', followersCount,cameAccessColour()),
                         const SizedBox(
                           width: 20,
                         ),
-                        buildCountSection('Following', followingCount),
+                        buildCountSection('Following', followingCount,cameAccessColour()),
                         const SizedBox(
                           width: 20,
                         ),
-                        buildCountSection('Post', followingCount),
+                        buildCountSection('Post', followingCount,cameAccessColour()),
                       ],
                     ),
                     const SizedBox(height: 20),
                     Text("    No Bio",
                         style: GoogleFonts.poppins(fontSize: 12)),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Row(
                       children: [
                         const SizedBox(
                           width: 20,
                         ),
-                        LoginButton(
-                            borderRadius: 20,
-                            height: 40,
-                            width: 130,
-                            containerColor: Color.fromARGB(255, 204, 232, 255),
-                            childWidget: Center(
-                                child: Text(
-                              "Edit Profile",
-                              style: cameAccessColour(),
-                            ))),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, MyRoutes.michealPage);
+                          },
+                          child: LoginButton(
+                              borderRadius: 20,
+                              height: 40,
+                              width: 130,
+                              containerColor: const Color.fromARGB(255, 204, 232, 255),
+                              childWidget: Center(
+                                  child: Text(
+                                "Edit Profile",
+                                style: cameAccessColour(),
+                              ))),
+                        ),
                         const SizedBox(
                           width: 20,
                         ),
-                        const ProfileContainerWidget()
+                        GestureDetector(
+                          onTap: () {
+                                Navigator.pushNamed(context, MyRoutes.addChildPage);
+                          },
+                          child: const ProfileContainerWidget())
                       ],
                     ),
                     const SizedBox(
@@ -166,6 +177,7 @@ class _ProfilePageState extends State<ProfilePage>
           ),
         ],
       ),
+      bottomNavigationBar: NavContainer(),
     );
   }
 }

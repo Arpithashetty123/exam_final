@@ -10,6 +10,8 @@ import 'package:flutter_application_1/apps/features/view/accountPages/number_pag
 import 'package:flutter_application_1/apps/features/view/accountPages/verification_page.dart';
 import 'package:flutter_application_1/apps/features/view/accountPages/welcome_page.dart';
 import 'package:flutter_application_1/apps/features/view/homepages/blog_page_info.dart';
+import 'package:flutter_application_1/apps/features/view/newFiles/Micheal.dart';
+import 'package:flutter_application_1/apps/features/view/newFiles/following.dart';
 import 'package:flutter_application_1/apps/features/view/newFiles/for_you_page.dart';
 import 'package:flutter_application_1/apps/features/view/newFiles/mainscreen.dart';
 import 'package:flutter_application_1/apps/features/view/newFiles/nearbuy.dart';
@@ -23,6 +25,7 @@ import 'package:flutter_application_1/apps/features/view/settings_page/set_user_
 import 'apps/features/authentications/mainscreen.dart';
 import 'apps/features/authentications/sign_up.dart';
 import 'apps/features/view/homepages/home_page.dart';
+import 'apps/features/view/newFiles/adding_newchild.dart';
 import 'apps/features/view/splash_screen.dart';
 import 'myrouter/routes.dart';
 
@@ -38,10 +41,10 @@ class MyApp extends StatelessWidget {
       title: 'Toddddler',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Color.fromRGBO(223, 239, 247, 1),
+        scaffoldBackgroundColor: Colors.white,
         primarySwatch: Colors.blue,
       ),
-      initialRoute: MyRoutes.nearbuy,
+      initialRoute: MyRoutes.splashPage,
       routes: {
         MyRoutes.splashPage: (context) => SplashPage(),
         MyRoutes.mainscreen: (context) => MainScreenPage(),
@@ -65,9 +68,12 @@ class MyApp extends StatelessWidget {
         MyRoutes.editProfileWidget: (context) => EditProfileWidget(),
         MyRoutes.blurPage: (context) => BlurPage(),
          MyRoutes.addChildWiget: (context) => AddChildWiget(),
-           MyRoutes.nearbuy: (context) => nearbuy(),
+         MyRoutes.nearbuy: (context) => Nearbuy(),
            MyRoutes.forYouPage: (context) => ForYouPage(),
              MyRoutes.findPage: (context) => FindPage(),
+              MyRoutes.followingPage: (context) => FollowingPage(),
+           MyRoutes.michealPage: (context) => MichealPage(),
+      MyRoutes.addChildPage: (context) => AddChildPage(),
 
       },
     );

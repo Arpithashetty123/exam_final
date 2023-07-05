@@ -21,84 +21,86 @@ class _MainInfoPageState extends State<MainInfoPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          children: [
-            const SizedBox(
-              height: 65,
-            ),
-            SplashImage(),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              "Sign Up/Login for",
-              style: GoogleFonts.poppins(
-                fontSize: 20,
-                color: const Color.fromRGBO(102, 211, 246, 1),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 65,
               ),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            SplashTextWidget(),
-            const SizedBox(
-              height: 45,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, MyRoutes.myNumberPage);
-              },
-              child: const CustomContainer(
-                iconColor: Colors.white,
-                textColor: Colors.white,
-                backgroundColor: Color.fromRGBO(102, 211, 246, 1),
-                icon: FontAwesome.mobile_phone,
-                text: "Phone Number",
+              SplashImage(),
+              const SizedBox(
+                height: 10,
               ),
-            ),
-            const SizedBox(height: 15),
-            const CustomContainer(
-              iconColor: Colors.black12,
-              textColor: Colors.black87,
-              backgroundColor: Colors.white,
-              icon: AntDesign.google,
-              text: "Continue with Google",
-            ),
-            const SizedBox(height: 28),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: RichText(
-                text: TextSpan(
-                  text: '      By continuing, you agree to the ',
-                  style: GoogleFonts.poppins(
-                    color: const Color.fromRGBO(102, 211, 246, 1),
-                    fontSize: 14,
-                  ),
-                  children: [
-                    TextSpan(
-                      text: 'Terms and Conditions',
-                      style: GoogleFonts.poppins(
-                        color: Color.fromRGBO(102, 211, 246, 1),
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextSpan(text: ' and confirm you have read '),
-                    TextSpan(
-                      text: 'Privacy Policy',
-                      style: GoogleFonts.poppins(
-                        color: Color.fromRGBO(102, 211, 246, 1),
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
+              Text(
+                "Sign Up/Login for",
+                style: GoogleFonts.poppins(
+                  fontSize: 20,
+                  color: const Color.fromRGBO(102, 211, 246, 1),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 180,
-            ),
-            NavContainer(),
-          ],
+              const SizedBox(
+                height: 5,
+              ),
+              SplashTextWidget(),
+              const SizedBox(
+                height: 45,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, MyRoutes.myNumberPage);
+                },
+                child: const CustomContainer(
+                  iconColor: Colors.white,
+                  textColor: Colors.white,
+                  backgroundColor: Color.fromRGBO(102, 211, 246, 1),
+                  icon: FontAwesome.mobile_phone,
+                  text: "Phone Number",
+                ),
+              ),
+              const SizedBox(height: 15),
+              const CustomContainer(
+                iconColor: Colors.black12,
+                textColor: Colors.black87,
+                backgroundColor: Colors.white,
+                icon: AntDesign.google,
+                text: "Continue with Google",
+              ),
+              const SizedBox(height: 28),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: RichText(
+                  text: TextSpan(
+                    text: '      By continuing, you agree to the ',
+                    style: GoogleFonts.poppins(
+                      color: const Color.fromRGBO(102, 211, 246, 1),
+                      fontSize: 14,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: 'Terms and Conditions',
+                        style: GoogleFonts.poppins(
+                          color: Color.fromRGBO(102, 211, 246, 1),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      TextSpan(text: ' and confirm you have read '),
+                      TextSpan(
+                        text: 'Privacy Policy',
+                        style: GoogleFonts.poppins(
+                          color: Color.fromRGBO(102, 211, 246, 1),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 180,
+              ),
+              NavContainer(),
+            ],
+          ),
         ),
       ),
     );

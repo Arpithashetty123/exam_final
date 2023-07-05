@@ -1,21 +1,25 @@
+import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/apps/features/utils/login_with_phone/nav_container.dart';
 import 'package:flutter_application_1/apps/features/utils/newPages/background_page.dart';
 import 'package:flutter_application_1/apps/features/utils/newPages/like_share.dart';
 import 'package:flutter_application_1/apps/features/utils/pagestyle.dart';
-import 'package:flutter_application_1/myrouter/routes.dart';
-import 'package:flutter_font_icons/flutter_font_icons.dart';
 
+import 'package:flutter_font_icons/flutter_font_icons.dart';
+import 'package:easy_search_bar/easy_search_bar.dart';
+import '../../../../myrouter/routes.dart';
 import '../../utils/newPages/new_file_container.dart';
 
-class ForYouPage extends StatefulWidget {
-  const ForYouPage({super.key});
+class FollowingPage extends StatefulWidget {
+  const FollowingPage({super.key});
 
   @override
-  State<ForYouPage> createState() => _ForYouPageState();
+  State<FollowingPage> createState() => _FollowingPageState();
 }
 
-class _ForYouPageState extends State<ForYouPage> {
+class _FollowingPageState extends State<FollowingPage> {
+ String searchValue = '';
+    
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +31,7 @@ class _ForYouPageState extends State<ForYouPage> {
             itemBuilder: (context, index) {
               return Stack(
                 children: [
-                  BackGroundPage(image: "assets/images/pexels-photo-7.png"),
+                  BackGroundPage(image: "assets/images/photo-of-child-playing-with-wooden-blocks-5.png"),
                   const Positioned(
                     bottom: 170,
                     right: 30,
@@ -49,8 +53,8 @@ class _ForYouPageState extends State<ForYouPage> {
                             )
                           ])),
                   const Positioned(
-                      right: 46,
-                      bottom: 410,
+                      right: 55,
+                      bottom: 418,
                       child: CircleAvatar(
                         radius: 12,
                         backgroundColor: Colors.white,
@@ -102,8 +106,8 @@ class _ForYouPageState extends State<ForYouPage> {
             ),
           ),
           const Positioned(
-            bottom: 30,
-            left: 20,
+            bottom: 25,
+            left: 15,
             child: NavContainer(),
           ),
         ],

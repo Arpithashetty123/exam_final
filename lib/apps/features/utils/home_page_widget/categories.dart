@@ -61,7 +61,9 @@ class CategoriesPage extends StatelessWidget {
               );
             },
           ),
+          
         ),
+        
       ],
     );
   }

@@ -20,8 +20,9 @@ class RecordedPageContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          SizedBox(width: 8),
+        
           GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, MyRoutes.postPage);
@@ -30,14 +31,14 @@ class RecordedPageContainer extends StatelessWidget {
                 "assets/images/Ellipse 8.png",
                 Colors.pink,
               )),
-          SizedBox(width: 12),
+       
           GestureDetector(
               onTap: () {
               Navigator.pushNamed(context, MyRoutes.postPage);
               },
               child: buildCircleAvatar(
-                  "assets/images/Ellipse 11.png", Colors.green)),
-          SizedBox(width: 15),
+                 "assets/images/Ellipse 11.png", Colors.green)),
+     
           GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(

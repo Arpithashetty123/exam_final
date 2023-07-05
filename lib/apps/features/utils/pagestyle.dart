@@ -51,7 +51,13 @@ TextStyle cameAccessColour() {
     fontSize: 15,
   );
 }
-
+TextStyle countsection() {
+  return GoogleFonts.poppins(
+    color:Colors.green.shade200,
+    fontWeight: FontWeight.w400,
+    fontSize: 15,
+  );
+}
 TextStyle postColour() {
   return GoogleFonts.poppins(
                     color: Colors.white,

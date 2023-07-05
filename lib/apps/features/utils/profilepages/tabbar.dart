@@ -23,8 +23,7 @@ class _MyTabbarState extends State<MyTabbar>
   Widget build(BuildContext context) {
     return TabBar(
       labelColor: Colors.black,
-      labelStyle:
-          GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w500),
+      labelStyle:GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w500),
       indicatorSize: TabBarIndicatorSize.label,
       indicator: UnderlineTabIndicator(
           borderRadius: BorderRadius.circular(2),

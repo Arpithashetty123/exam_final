@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/apps/features/utils/newPages/new_file_container.dart';
+import 'package:flutter_application_1/myrouter/routes.dart';
+import 'package:flutter_font_icons/flutter_font_icons.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:anim_search_bar/anim_search_bar.dart';
 
 class FindPage extends StatefulWidget {
   const FindPage({Key? key}) : super(key: key);
@@ -9,23 +14,68 @@ class FindPage extends StatefulWidget {
 
 class _FindPageState extends State<FindPage> {
   final List<String> data = [
-    "Cooking",
-    "Baby Products",
-    "Health",
-    "Culture",
-    "Pregnancy",
-    "Cute",
+    "Following",
+    "Nearby",
+    "video",
+    "Blog",
+    "Internet",
+    "For u",
     "Lifestyle",
     "Art",
   ];
-
+  final List<String> images = [
+    "assets/images/pexels-photo-1.png",
+    "assets/images/pexels-photo-2.png",
+    "assets/images/pexels-photo-3.png",
+    "assets/images/pexels-photo-2869318.png",
+    "assets/images/pexels-photo-1.png",
+    "assets/images/photo-of-child-playing-with-wooden-blocks-3933279.png",
+    "assets/images/pexels-photo-2.png",
+    "assets/images/pexels-photo-3.png",
+    "assets/images/pexels-photo-2869318.png",
+    "assets/images/photo-of-child-playing-with-wooden-blocks-3933279.png",
+  ];
+  TextEditingController textController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(
-            height: 30,
+          Padding(
+            padding: const EdgeInsets.only(left: 10, top: 40,right: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AnimSearchBar(
+                  width: 320,
+                  helpText: "Search",
+                  closeSearchOnSuffixTap: false,
+                  textFieldColor: Colors.blue.shade100,
+                  suffixIcon: const Icon(Icons.search),
+                  textController: textController,
+                  color: Colors.blue.shade300,
+                  onSuffixTap: () {
+                    setState(() {
+                      textController.clear();
+                    });
+                  },
+                  onSubmitted: (String) {},
+                ),
+                // const SizedBox(
+                //   width: 10,
+                // ),
+                const NewContainer(
+                    iconData: FontAwesome.video_camera,
+                    iconColor: Colors.white,
+                    containerColor: Colors.black,
+                    borderColor: Colors.black)
+                // const CircleAvatar(
+                //   radius: 20,
+                //   backgroundColor: Colors.black,
+                //   child: Icon(,),
+                // )
+              ],
+            ),
           ),
           Expanded(
             child: DefaultTabController(
@@ -33,19 +83,20 @@ class _FindPageState extends State<FindPage> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 80,
+                    height: 70,
                     child: TabBar(
+                      indicatorSize: TabBarIndicatorSize.label,
+                      indicatorColor: Colors.pink,
+                      labelColor: Colors.pink,
                       isScrollable: true,
                       labelPadding: const EdgeInsets.all(20),
                       labelStyle: const TextStyle(
-                        fontSize: 16,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.blue,
                       ),
-                      unselectedLabelStyle: const TextStyle(
+                      unselectedLabelStyle: GoogleFonts.poppins(
                         fontSize: 16,
                         fontWeight: FontWeight.normal,
-                        color: Colors.black,
                       ),
                       tabs: data.map((title) => Text(title)).toList(),
                     ),
@@ -54,16 +105,26 @@ class _FindPageState extends State<FindPage> {
                     child: TabBarView(
                       children: data.map((title) {
                         return Padding(
-                          padding: const EdgeInsets.all(20.0),
+                          padding: const EdgeInsets.only(left: 10, right: 10),
                           child: GridView.builder(
-                            itemCount: 10,
-                              gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 2),
-                              itemBuilder: (context, index) {
-                                return Image.asset("assets/images/Rectangle 37.png");
-                              },),
-                          // child: Image.asset("assets/images/Rectangle 37.png")
+                            itemCount: images.length,
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                    // mainAxisExtent: 200,
+                                    mainAxisSpacing: 10,
+                                    crossAxisCount: 2),
+                            itemBuilder: (context, index) {
+                              return GestureDetector(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                        context, MyRoutes.nearbuy);
+                                  },
+                                  child: Image.asset(
+                                    images[index],
+                                    fit: BoxFit.contain,
+                                  ));
+                            },
+                          ),
                         );
                       }).toList(),
                     ),
