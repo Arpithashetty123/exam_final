@@ -5,7 +5,6 @@ import 'package:flutter_application_1/apps/features/utils/newPages/like_share.da
 import 'package:flutter_application_1/apps/features/utils/pagestyle.dart';
 import 'package:flutter_application_1/myrouter/routes.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
-
 import '../../utils/newPages/new_file_container.dart';
 
 class ForYouPage extends StatefulWidget {
@@ -27,7 +26,7 @@ class _ForYouPageState extends State<ForYouPage> {
             itemBuilder: (context, index) {
               return Stack(
                 children: [
-                  BackGroundPage(image: "assets/images/pexels-photo-7.png"),
+                  const BackGroundPage(image: "assets/images/pexels-photo-7.png"),
                   const Positioned(
                     bottom: 170,
                     right: 30,

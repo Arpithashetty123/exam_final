@@ -1,9 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../pagestyle.dart';
-
 Widget buildCountSection(String title, int count,TextStyle style) {
     return Column(
       children: [
@@ -11,7 +7,7 @@ Widget buildCountSection(String title, int count,TextStyle style) {
           count.toString(),
           style: GoogleFonts.poppins(color: Colors.black)
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         Text(
           title,
           style:style

@@ -3,14 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/myrouter/routes.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../view/newFiles/nearbuy.dart';
 import '../Button_widgets/sinup_buttom.dart';
-
 import 'circle_avatr_widget.dart';
 
 class PostContainer extends StatelessWidget {
-  const PostContainer({Key? key});
+  const PostContainer({super.key,});
 
   @override
   Widget build(BuildContext context) {

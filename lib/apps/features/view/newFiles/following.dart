@@ -1,12 +1,9 @@
-import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/apps/features/utils/login_with_phone/nav_container.dart';
 import 'package:flutter_application_1/apps/features/utils/newPages/background_page.dart';
 import 'package:flutter_application_1/apps/features/utils/newPages/like_share.dart';
 import 'package:flutter_application_1/apps/features/utils/pagestyle.dart';
-
 import 'package:flutter_font_icons/flutter_font_icons.dart';
-import 'package:easy_search_bar/easy_search_bar.dart';
 import '../../../../myrouter/routes.dart';
 import '../../utils/newPages/new_file_container.dart';
 
