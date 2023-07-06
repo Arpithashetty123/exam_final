@@ -6,17 +6,17 @@ import 'package:flutter_application_1/apps/features/utils/pagestyle.dart';
 import 'package:flutter_application_1/myrouter/routes.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import '../../utils/newPages/new_file_container.dart';
-
 class ForYouPage extends StatefulWidget {
   const ForYouPage({super.key});
-
   @override
   State<ForYouPage> createState() => _ForYouPageState();
 }
-
 class _ForYouPageState extends State<ForYouPage> {
   @override
   Widget build(BuildContext context) {
+final mediaQuery = MediaQuery.of(context);
+final screenHeight = mediaQuery.size.height;
+final screenWidth = mediaQuery.size.width;
     return Scaffold(
       body: Stack(
         children: [
@@ -27,14 +27,14 @@ class _ForYouPageState extends State<ForYouPage> {
               return Stack(
                 children: [
                   const BackGroundPage(image: "assets/images/pexels-photo-7.png"),
-                  const Positioned(
-                    bottom: 170,
-                    right: 30,
-                    child: LikeShareWidget(),
+                   Positioned(
+                    bottom: screenHeight * 0.168,
+                    right: screenWidth * 0.085,
+                    child: const LikeShareWidget(),
                   ),
                   Positioned(
-                      bottom: 120,
-                      left: 20,
+                     bottom: screenHeight * 0.13,
+                    left: screenWidth * 0.05,
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -47,10 +47,10 @@ class _ForYouPageState extends State<ForYouPage> {
                               style: postColour(),
                             )
                           ])),
-                  const Positioned(
-                      right: 46,
-                      bottom: 410,
-                      child: CircleAvatar(
+                   Positioned(
+                      bottom: screenHeight * 0.430,
+                      right: screenHeight * 0.055,
+                      child: const CircleAvatar(
                         radius: 12,
                         backgroundColor: Colors.white,
                         child: CircleAvatar(
@@ -68,7 +68,7 @@ class _ForYouPageState extends State<ForYouPage> {
             },
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 80),
+            padding:  EdgeInsets.only( top: screenHeight * 0.08,),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -100,9 +100,10 @@ class _ForYouPageState extends State<ForYouPage> {
               ],
             ),
           ),
-          const Positioned(
-            bottom: 30,
-            left: 20,
+           Positioned(
+             bottom: screenHeight * 0.03,
+            left: screenWidth * 0.05,
+            right: screenWidth * 0.05,
             child: NavContainer(),
           ),
         ],

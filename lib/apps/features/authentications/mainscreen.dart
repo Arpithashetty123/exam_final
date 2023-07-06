@@ -45,7 +45,7 @@ class MainScreenPage extends StatelessWidget {
                 ),
               ),
               CustomOtherSignupButton(
-                buttonColor: Colors.white,
+                buttonColor: Colors.grey.shade100,
                 textColor: Colors.black,
                 text: "Google",
                 assetPath: "assets/images/googlelogo.png",

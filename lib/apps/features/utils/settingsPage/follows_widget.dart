@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-
 class MyListView extends StatefulWidget {
   @override
   _MyListViewState createState() => _MyListViewState();
 }
-
 class _MyListViewState extends State<MyListView> {
-  final List<String> stories = [
+  final List<String> followers = [
     "assets/images/Ellipse 8.png",
     "assets/images/Ellipse 11.png",
     "assets/images/Ellipse 19.png",
@@ -15,20 +13,18 @@ class _MyListViewState extends State<MyListView> {
     "assets/images/Ellipse 11.png",
     "assets/images/Ellipse 19.png",
   ];
-
-  List<bool> isFollowing = List.filled(7, false);
-
+  List<bool>isFollowing = List.filled(7, false);
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: stories.length,
+      itemCount: followers.length,
       itemBuilder: (BuildContext context, int index) {
         return Padding(
           padding: const EdgeInsets.only(bottom: 20),
           child: ListTile(
             leading: CircleAvatar(
               radius: 30,
-              backgroundImage: AssetImage(stories[index]),
+              backgroundImage: AssetImage(followers[index]),
             ),
             title: Text('User ${index + 1}'),
             trailing: ElevatedButton(
@@ -37,7 +33,7 @@ class _MyListViewState extends State<MyListView> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
-                fixedSize: Size(120, 25),
+                fixedSize: const Size(120, 25),
               ),
               onPressed: () {
                 setState(() {
@@ -45,7 +41,7 @@ class _MyListViewState extends State<MyListView> {
                 });
               },
               child: Text(
-                isFollowing[index] ? 'Follow Back' : 'Follow',
+                isFollowing[index]?'Follow Back':'Follow',
               ),
             ),
           ),

@@ -38,7 +38,7 @@ class _TabContollerState extends State<TabContoller> {
             ],
           ),
           SizedBox(
-            height: 350, 
+            height: 380, 
             child: TabBarView(
               physics: BouncingScrollPhysics(),
               children: [

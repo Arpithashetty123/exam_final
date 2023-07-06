@@ -4,9 +4,8 @@ import 'package:flutter_application_1/apps/features/utils/pagestyle.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../myrouter/routes.dart';
 import '../../utils/settingsPage/follows_widget.dart';
-
 class NotificationPage extends StatefulWidget {
-  const NotificationPage({Key? key});
+  const NotificationPage({super.key});
 
   @override
   State<NotificationPage> createState() => _NotificationPageState();
@@ -16,10 +15,10 @@ class _NotificationPageState extends State<NotificationPage> {
   int selectedIndex = 0;
   final List<String> categories = ['System', 'Follows', 'Likes', 'Comments'];
   final List<Widget> contentWidgets = [
-    Text('System Content'),
+    const Text('System Content'),
     MyListView(),
-    Text('Likes Content'),
-    Text('Comments Content'),
+    const Text('Likes Content'),
+    const Text('Comments Content'),
   ];
 
   @override
@@ -63,7 +62,7 @@ class _NotificationPageState extends State<NotificationPage> {
               width:screenWidth,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(screenHeight * 0.04),
-                color: Color.fromARGB(255, 220, 246, 255),
+                color: const Color.fromARGB(255, 220, 246, 255),
               ),
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -86,7 +85,7 @@ class _NotificationPageState extends State<NotificationPage> {
                             horizontal: screenWidth * 0.05),
                         decoration: BoxDecoration(
                           color: selectedIndex == index
-                              ? Color.fromRGBO(102, 211, 246, 1)
+                              ? const Color.fromRGBO(102, 211, 246, 1)
                               : Colors.transparent,
                           borderRadius:
                               BorderRadius.circular(screenHeight * 0.04),
@@ -106,7 +105,7 @@ class _NotificationPageState extends State<NotificationPage> {
                 },
               ),
             ),
-            SizedBox(height: screenHeight * 0.04),
+            SizedBox(height: screenHeight * 0.03),
             Expanded(
               child: contentWidgets[selectedIndex],
             ),

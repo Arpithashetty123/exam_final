@@ -55,65 +55,69 @@ class EditProfilePage extends StatelessWidget {
             left: screenWidth * 0.1,
             top: screenHeight * 0.03,
             right: screenWidth * 0.08),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              text,
-              style: verificationColour(),
-            ),
-            SizedBox(
-              height: screenHeight * 0.03,
-            ),
-            ProfileEditWidget(),
-            SizedBox(height: screenHeight * 0.02),
-            Container(
-              height: screenHeight * 0.42,
-              width: screenWidth * 0.99,
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 241, 247, 252),
-                borderRadius: BorderRadius.circular(screenWidth * 0.08),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                text,
+                style: verificationColour(),
               ),
-              padding: EdgeInsets.all(screenWidth * 0.02),
-              child: ListView.builder(
-                itemCount: profileList.length,
-                itemBuilder: (context, index) {
-                  final setting = profileList[index];
-                  return Column(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: screenWidth * 0.01,
-                            right: screenWidth * 0.01),
-                        child: ListTile(
-                          leading: Text(setting['Name'],
-                              style: GoogleFonts.poppins(fontSize: 15)),
-                          title: Text(setting['UserName'],
-                              style: GoogleFonts.poppins(fontSize: 15)),
-                          trailing: Icon(setting['icon'],
-                              size: 35, color: Colors.black),
+              SizedBox(
+                height: screenHeight * 0.03,
+              ), 
+              const ProfileEditWidget(),
+              SizedBox(height: screenHeight * 0.02),
+              Container(
+                height: screenHeight * 0.42,
+                width: screenWidth * 0.99,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 241, 247, 252),
+                  borderRadius: BorderRadius.circular(screenWidth * 0.08),
+                ),
+                padding: EdgeInsets.all(screenWidth * 0.02),
+                child: ListView.builder(
+                  itemCount: profileList.length,
+                  itemBuilder: (context, index) {
+                    final setting = profileList[index];
+                    return Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: screenWidth * 0.01,
+                              right: screenWidth * 0.01),
+                          child: ListTile(
+                            leading: Text(setting['Name'],
+                                style: GoogleFonts.poppins(fontSize: 15)),
+                            title: Text(setting['UserName'],
+                                style: GoogleFonts.poppins(fontSize: 15)),
+                            trailing: Icon(setting['icon'],
+                                size: 35, color: Colors.black),
+                          ),
                         ),
-                      ),
-                      if (index < profileList.length - 1)
-                        Divider(
-                          color: Color.fromARGB(255, 200, 230, 255),
-                          thickness: 1,
-                          height: screenWidth * 0.04,
-                        ),
-                    ],
-                  );
-                },
+
+
+                        if (index < profileList.length - 1)
+                          Divider(
+                            color: Color.fromARGB(255, 200, 230, 255),
+                            thickness: 1,
+                            height: screenWidth * 0.04,
+                          ),
+                      ],
+                    );
+                  },
+                ),
               ),
-            ),
-            SizedBox(height: screenHeight * 0.030),
-            Center(
-                child: Text("Delete Account",
-                    style: GoogleFonts.poppins(
-                        color: Color.fromARGB(255, 248, 74, 132),
-                        fontSize: screenWidth * 0.05))),
-            SizedBox(height: screenHeight * 0.10),
-            NavContainer(),
-          ],
+              SizedBox(height: screenHeight * 0.030),
+              Center(
+                  child: Text("Delete Account",
+                      style: GoogleFonts.poppins(
+                          color: Color.fromARGB(255, 248, 74, 132),
+                          fontSize: screenWidth * 0.05))),
+              SizedBox(height: screenHeight * 0.10),
+              NavContainer(),
+            ],
+          ),
         ),
       ),
     );

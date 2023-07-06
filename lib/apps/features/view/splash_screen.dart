@@ -33,7 +33,8 @@ class _SplashPageState extends State<SplashPage> {
           body: Stack(
             children: [
               Align(alignment: Alignment.center, child: SplashContainer(800, 800)),
-              Positioned(top: 150, left: 300, child: SplashContainer(300, 300)),
+              Positioned( top: mediaQuery.size.height * 0.150,
+                left: mediaQuery.size.width * 0.70, child: SplashContainer(300, 300)),
               Positioned(
                 bottom: 0,
                 right: 220,
@@ -42,9 +43,9 @@ class _SplashPageState extends State<SplashPage> {
                Positioned(
                top: mediaQuery.size.height * 0.350,
                 right: mediaQuery.size.width * 0.30,
-                 child: SplashImage()),
+                 child: const SplashImage()),
               Positioned(
-                top: mediaQuery.size.height * 0.180,
+                top: mediaQuery.size.height * 0.190,
                 right: mediaQuery.size.width * 0.15,
                 child: const CircleAvatar(
                   backgroundColor: Colors.blue,
@@ -53,7 +54,7 @@ class _SplashPageState extends State<SplashPage> {
               ),
               Positioned(
                 bottom: mediaQuery.size.height * 0.1,
-                left: mediaQuery.size.width * 0.35,
+                left: mediaQuery.size.width * 0.30,
                 child: const CircleAvatar(
                   backgroundColor: Colors.blue,
                   radius: 40,
@@ -65,11 +66,12 @@ class _SplashPageState extends State<SplashPage> {
                 left: mediaQuery.size.width * 0.180,
                 child: const CircleAvatar(
                   backgroundColor: Colors.blue,
-                  radius: 60,
+                  radius: 55,
                   backgroundImage: AssetImage("assets/images/baby-in-white-onesie-789786.png"),
                 ),
               ),
-              const Positioned(bottom: 358, left: 100, child: SplashTextWidget()),
+               Positioned(   bottom: mediaQuery.size.height * 0.408,
+                left: mediaQuery.size.width * 0.210, child: SplashTextWidget()),
             ],
           ),
         );

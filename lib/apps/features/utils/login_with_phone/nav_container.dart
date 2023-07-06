@@ -1,14 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/myrouter/routes.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
-
 class NavContainer extends StatefulWidget {
   const NavContainer({super.key});
 
   @override
   State<NavContainer> createState() => _NavContainerState();
 }
-
 class _NavContainerState extends State<NavContainer> {
   int currentIndex = 0;
 
@@ -31,15 +30,24 @@ class _NavContainerState extends State<NavContainer> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           GestureDetector(
-            onTap: () => onTabTapped(0),
+            onTap: () { 
+              Navigator.pushNamed(context,MyRoutes.homeScreen);
+              onTabTapped(0);},
             child: buildIcon(Icons.home, currentIndex, 0),
           ),
           GestureDetector(
-            onTap: () => onTabTapped(1),
+            onTap: () {
+              Navigator.pushNamed(context,MyRoutes.findPage);
+               onTabTapped(1);
+               },
+
             child: buildIcon(Ionicons.compass, currentIndex, 1),
           ),
           GestureDetector(
-            onTap: () => onTabTapped(2),
+           onTap: () {
+              Navigator.pushNamed(context,MyRoutes.mainInfoPage);
+               onTabTapped(2);
+               },
             child: buildIcon(Icons.person, currentIndex, 2),
           ),
         ],
@@ -57,7 +65,7 @@ Widget buildIcon(
     icon,
     size: 40,
     color: currentIndex == index
-        ? Color.fromRGBO(33, 39, 56, 1)
+        ? const Color.fromRGBO(33, 39, 56, 1)
         : Colors.grey.shade500,
   );
 }

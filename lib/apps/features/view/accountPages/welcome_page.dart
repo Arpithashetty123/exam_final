@@ -49,7 +49,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 SizedBox(
                   height: screenHeight * 0.04,
                 ),
-                phoneNumberWidget(BorderRadius.circular(screenWidth * 0.15)),
+                phoneNumberWidget(BorderRadius.circular(screenWidth * 0.10)),
                 SizedBox(
                   height: screenHeight * 0.03,
                 ),
@@ -82,7 +82,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     width: screenWidth * 0.9,
                     height: screenHeight * 0.08,
                     borderRadius: 50,
-                    containerColor: Color.fromRGBO(102, 211, 246, 1),
+                    containerColor: const Color.fromRGBO(102, 211, 246, 1),
                     childWidget: const Center(
                       child: Text(
                         "Sign Up",

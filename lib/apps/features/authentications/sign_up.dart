@@ -64,8 +64,8 @@ class _SignUpPageState extends State<SignUpPage> {
                 },
                 child: LoginButton(
                   containerColor: Color.fromRGBO(102, 211, 246, 1),
-                  borderRadius: 3,
-                  height: screenSize.height * 0.1,
+                  borderRadius: 10,
+                  height: 70,
                   width: 400,
                   childWidget: Center(
                     child: Text(

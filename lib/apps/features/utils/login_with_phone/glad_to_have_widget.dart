@@ -46,7 +46,7 @@ class CustomInputContainer extends StatelessWidget {
                 ),
                 cursorColor: Colors.black,
                 cursorWidth: 2,
-                autofocus: false,
+            autofocus: false,
               ),
             ),
             Icon(

@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../utils/recordings/circle_avatr_widget.dart';
-
 class MichealConatiner extends StatelessWidget {
   const MichealConatiner(
       {super.key,
@@ -10,12 +8,13 @@ class MichealConatiner extends StatelessWidget {
       required this.backgroundColor,
       required this.circleAvatarcolor,
       required this.mainText,
-      required this.subText});
+      required this.subText, required this.textColor});
   final String assetImage;
   final Color backgroundColor;
   final Color circleAvatarcolor;
   final String mainText;
   final String subText;
+   final Color textColor;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,14 +31,14 @@ class MichealConatiner extends StatelessWidget {
           buildCircleAvatar(assetImage, circleAvatarcolor),
           Text(
             mainText,
-            style: TextStyle(color: Colors.black, fontSize: 12),
+            style: const TextStyle(color: Colors.black, fontSize: 12),
           ),
           const SizedBox(
             height: 2,
           ),
           Text(
             subText,
-            style: TextStyle(color: Colors.purple, fontSize: 12),
+            style: TextStyle(color:textColor, fontSize: 12),
           )
         ],
       ),

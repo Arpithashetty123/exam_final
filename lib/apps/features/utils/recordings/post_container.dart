@@ -5,7 +5,6 @@ import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../Button_widgets/sinup_buttom.dart';
 import 'circle_avatr_widget.dart';
-
 class PostContainer extends StatelessWidget {
   const PostContainer({super.key,});
 
@@ -15,7 +14,7 @@ class PostContainer extends StatelessWidget {
     final screenWidth = mediaQuery.size.width;
 
     return Container(
-      height: mediaQuery.size.height * 0.35,
+      height: mediaQuery.size.height * 0.34,
       width: screenWidth,
       decoration: const BoxDecoration(
         color: Colors.white,
@@ -81,10 +80,10 @@ class PostContainer extends StatelessWidget {
             },
             child: Padding(
               padding: EdgeInsets.only(
-                left: screenWidth * 0.15,
-                right: screenWidth * 0.15,
+                left: screenWidth * 0.10,
+                right: screenWidth * 0.10,
               ),
-              child: SinUpButton(
+              child: const SinUpButton(
                 containerColor: Color.fromRGBO(102, 211, 246, 1),
                 text: "Post",
                 textColor: Colors.black,

@@ -13,7 +13,6 @@ import '../../utils/profilepages/tabbar.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
-
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }
@@ -25,7 +24,6 @@ class _ProfilePageState extends State<ProfilePage>
   int postsCount = 0;
   int taggedCount = 0;
   late TabController _tabController;
-
   @override
   void initState() {
     super.initState();
@@ -95,7 +93,7 @@ class _ProfilePageState extends State<ProfilePage>
                                 child: Container(
                                   decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
-                                      color: Colors.blue),
+                                      color: Colors.black),
                                   child: const Icon(
                                     FontAwesome.camera,
                                     color: Colors.white,
@@ -110,15 +108,18 @@ class _ProfilePageState extends State<ProfilePage>
                         const SizedBox(
                           width: 20,
                         ),
-                        buildCountSection('Followers', followersCount,cameAccessColour()),
+                        buildCountSection(
+                            'Followers', followersCount, cameAccessColour()),
                         const SizedBox(
                           width: 20,
                         ),
-                        buildCountSection('Following', followingCount,cameAccessColour()),
+                        buildCountSection(
+                            'Following', followingCount, cameAccessColour()),
                         const SizedBox(
                           width: 20,
                         ),
-                        buildCountSection('Post', followingCount,cameAccessColour()),
+                        buildCountSection(
+                            'Post', followingCount, cameAccessColour()),
                       ],
                     ),
                     const SizedBox(height: 20),
@@ -138,7 +139,8 @@ class _ProfilePageState extends State<ProfilePage>
                               borderRadius: 20,
                               height: 40,
                               width: 130,
-                              containerColor: const Color.fromARGB(255, 204, 232, 255),
+                              containerColor:
+                                  const Color.fromARGB(255, 204, 232, 255),
                               childWidget: Center(
                                   child: Text(
                                 "Edit Profile",
@@ -149,10 +151,11 @@ class _ProfilePageState extends State<ProfilePage>
                           width: 20,
                         ),
                         GestureDetector(
-                          onTap: () {
-                                Navigator.pushNamed(context, MyRoutes.addChildPage);
-                          },
-                          child: const ProfileContainerWidget())
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, MyRoutes.addChildPage);
+                            },
+                            child: const ProfileContainerWidget())
                       ],
                     ),
                     const SizedBox(
@@ -177,49 +180,7 @@ class _ProfilePageState extends State<ProfilePage>
           ),
         ],
       ),
-      bottomNavigationBar: NavContainer(),
+      bottomNavigationBar: const NavContainer(),
     );
   }
 }
-/*Widget buildNewPostSection() {
-  return Container(
-    height: 300,
-    width: 300,
-    child: GridView.builder(
-      itemCount: 10,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3), 
-      itemBuilder: (context, index) {
-        // Use a list of image paths and select a different image based on the index
-        List<String> imagePaths = [
-          "assets/images/image1.png",
-          "assets/images/image2.png",
-          "assets/images/image3.png",
-          // Add more image paths here
-        ];
-        return Image.asset(imagePaths[index % imagePaths.length]);
-      },
-    ),
-  );
-}
-
-Widget buildTaggedSection() {
-  return Container(
-    height: 300,
-    width: 300,
-    child: GridView.builder(
-      itemCount: 10,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3), 
-      itemBuilder: (context, index) {
-        // Use a list of image paths and select a different image based on the index
-        List<String> imagePaths = [
-          "assets/images/image4.png",
-          "assets/images/image5.png",
-          "assets/images/image6.png",
-          // Add more image paths here
-        ];
-        return Image.asset(imagePaths[index % imagePaths.length]);
-      },
-    ),
-  );
-}
-*/ 

@@ -6,19 +6,17 @@ import 'package:flutter_application_1/apps/features/utils/pagestyle.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import '../../../../myrouter/routes.dart';
 import '../../utils/newPages/new_file_container.dart';
-
 class FollowingPage extends StatefulWidget {
   const FollowingPage({super.key});
-
   @override
   State<FollowingPage> createState() => _FollowingPageState();
 }
-
 class _FollowingPageState extends State<FollowingPage> {
- String searchValue = '';
-    
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+final screenHeight = mediaQuery.size.height;
+final screenWidth = mediaQuery.size.width;
     return Scaffold(
       body: Stack(
         children: [
@@ -28,15 +26,17 @@ class _FollowingPageState extends State<FollowingPage> {
             itemBuilder: (context, index) {
               return Stack(
                 children: [
-                  BackGroundPage(image: "assets/images/photo-of-child-playing-with-wooden-blocks-5.png"),
-                  const Positioned(
-                    bottom: 170,
-                    right: 30,
+                  const BackGroundPage(
+                      image:
+                          "assets/images/photo-of-child-playing-with-wooden-blocks-5.png"),
+                   Positioned(
+                    bottom: screenHeight * 0.168,
+                    right: screenWidth * 0.085,
                     child: LikeShareWidget(),
                   ),
                   Positioned(
-                      bottom: 120,
-                      left: 20,
+                      bottom: screenHeight * 0.13,
+                    left: screenWidth * 0.05,
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -49,10 +49,10 @@ class _FollowingPageState extends State<FollowingPage> {
                               style: postColour(),
                             )
                           ])),
-                  const Positioned(
-                      right: 55,
-                      bottom: 418,
-                      child: CircleAvatar(
+                   Positioned(
+                     bottom: screenHeight * 0.430,
+                      right: screenHeight * 0.055,
+                      child: const CircleAvatar(
                         radius: 12,
                         backgroundColor: Colors.white,
                         child: CircleAvatar(
@@ -70,7 +70,7 @@ class _FollowingPageState extends State<FollowingPage> {
             },
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 80),
+            padding:  EdgeInsets.only(top: screenHeight * 0.08,),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -83,9 +83,14 @@ class _FollowingPageState extends State<FollowingPage> {
                     style: postColour(),
                   ),
                 ),
-                Text(
-                  "For You",
-                  style: postColour(),
+                GestureDetector(
+                  onTap:() {
+                     Navigator.pushNamed(context, MyRoutes.forYouPage);
+                  },
+                  child: Text(
+                    "For You",
+                    style: postColour(),
+                  ),
                 ),
                 const NewContainer(
                   borderColor: Colors.blue,
@@ -102,10 +107,11 @@ class _FollowingPageState extends State<FollowingPage> {
               ],
             ),
           ),
-          const Positioned(
-            bottom: 25,
-            left: 15,
-            child: NavContainer(),
+           Positioned(
+             bottom: screenHeight * 0.03,
+            left: screenWidth * 0.05,
+            right: screenWidth * 0.05,
+            child: const NavContainer(),
           ),
         ],
       ),
